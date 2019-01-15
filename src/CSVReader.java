@@ -1,9 +1,12 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class CSVReader {
 
@@ -32,6 +35,37 @@ public class CSVReader {
             e.printStackTrace();
         }
         processData();
+
+        orderProcessedActivitiesByDate();
+
+        createActivities(5);
+
+    }
+
+    private static void createActivities(int calibratedTime) {
+        for (ProbeActivity activity : activities) {
+            for (int i = 1; i < activity.getProbes().size(); i++) {
+                try {
+                    Date firstDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                            .parse(activity.getProbes().get(i - 1).getDate());
+                    Date secondDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                            .parse(activity.getProbes().get(i).getDate());
+                    long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
+                    long diff = TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);
+
+                    if (diff > calibratedTime) {
+                        System.out.println(firstDate + " , " + secondDate);
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }
+
+    private static void orderProcessedActivitiesByDate() {
         for (ProbeActivity activity : activities) {
             activity.orderActivitiesByDate();
             System.out.println("Activity + " + activity.toString());
@@ -40,7 +74,6 @@ public class CSVReader {
                 System.out.println("Activity + " + probe.toString());
             }*/
         }
-
     }
 
     private static void processData() {
