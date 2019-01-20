@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,6 +41,17 @@ public class CSVReader {
     }
 
     private static void createActivities(int calibratedTime) {
+        StringBuilder sb = null;
+        PrintWriter pw;
+        try {
+            pw = new PrintWriter(new File("/Users/Aletta/Desktop/sniffngo/test.csv"));
+            sb = new StringBuilder();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
         for (ProbeActivity activity : activities) {
             for (int i = 1; i < activity.getProbes().size(); i++) {
                 try {
@@ -55,6 +64,7 @@ public class CSVReader {
 
                     if (diff > calibratedTime) {
                         System.out.println(firstDate + " , " + secondDate);
+                        sb.append(activity.getProbes().get(i).getMac_address());
                     }
 
                 } catch (ParseException e) {
@@ -89,7 +99,7 @@ public class CSVReader {
             } else {
                 if (last) {
 
-                    probeActivity.addProbe(initialDataSet.get(i-1));
+                    probeActivity.addProbe(initialDataSet.get(i - 1));
                     activities.add(probeActivity);
                 }
                 last = false;
