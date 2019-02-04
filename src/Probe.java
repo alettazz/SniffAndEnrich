@@ -7,7 +7,7 @@ public class Probe {
     private String date;
     private String rssi;
 
-    public Probe(String mac_address, String vendor, String ssid, String date, String rssi) {
+    public Probe(String mac_address, String vendor, String ssid, String date, String rssi, String dump) {
         this.mac_address = mac_address;
         this.vendor = vendor;
         this.ssid = ssid;

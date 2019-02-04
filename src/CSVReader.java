@@ -14,9 +14,9 @@ public class CSVReader {
     private static int id = 1;
 
     public static void main(String[] args) {
-        String csvFile = "/Users/Aletta/Desktop/sniffngo/probeDB_FILTERED_ssid.csv";
+        String csvFile = "/Users/Aletta/Desktop/sniffngo/convertcsv.csv";
         String line = "";
-        String cvsSplitBy = ";";
+        String cvsSplitBy = ",";
         initialDataSet = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
@@ -26,8 +26,11 @@ public class CSVReader {
                 // use comma as separator
                 String[] split = line.split(cvsSplitBy);
 
-                Probe probe = new Probe(split[0], split[1], split[2], split[3], split[4]);
-                initialDataSet.add(probe);
+                Probe probe = new Probe(split[0], split[1], split[2], split[3], split[4], split[5]);
+                if (probe.getSsid().equals("SSID: ") || probe.getSsid().equals("Internet") || probe.getSsid().equals("Internet5G")) {
+
+                    initialDataSet.add(probe);
+                }
             }
 
         } catch (IOException e) {
@@ -64,17 +67,17 @@ public class CSVReader {
             sb.append(',');
             sb.append("rssi_1");
             sb.append(',');
-            sb.append("dist_1");
-            sb.append(',');
             sb.append("ssid_2");
             sb.append(',');
             sb.append("rssi_2");
             sb.append(',');
-            sb.append("dist_2");
-            sb.append(',');
             sb.append("ssid_3");
             sb.append(',');
             sb.append("rssi_3");
+            sb.append(',');
+            sb.append("dist_1");
+            sb.append(',');
+            sb.append("dist_2");
             sb.append(',');
             sb.append("dist_3");
             sb.append(',');
@@ -127,14 +130,12 @@ public class CSVReader {
                         sb.append(",");
                         sb.append(activity.getProbes().get(i - 1).getRssi());
                         sb.append(",");
-                        sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i - 1).getRssi()), 2.4));
-                        sb.append(",");
+
                         sb.append(activity.getProbes().get(i).getSsid());
                         sb.append(",");
                         sb.append(activity.getProbes().get(i).getRssi());
                         sb.append(",");
-                        sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi()), 2.4));
-                        sb.append(",");
+
 
                         if (activity.getProbes().size() > 2 && i + 1 < activity.getProbes().size()) {
                             sb.append(activity.getProbes().get(i + 1).getSsid());
@@ -143,12 +144,23 @@ public class CSVReader {
                             sb.append(",");
                             sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i - 1).getRssi()), 2.4));
                             sb.append(",");
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi()), 2.4));
+                            sb.append(",");
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i + 1).getRssi()), 2.4));
+                            sb.append(",");
 
                         } else {
+
                             sb.append(" null ");
                             sb.append(",");
                             sb.append(" null ");
+                            sb.append(",");
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i - 1).getRssi()), 2.4));
+                            sb.append(",");
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi()), 2.4));
+                            sb.append(",");
                             sb.append(" 0 ");
+                            sb.append(",");
 
                         }
                         sb.append(",");
