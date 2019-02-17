@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DatabaseCleaner.iml" filepath="$PROJECT_DIR$/DatabaseCleaner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parsermaven/parsermaven.iml" filepath="$PROJECT_DIR$/parsermaven/parsermaven.iml" />
     </modules>
   </component>
 </project>

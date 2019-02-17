@@ -220,10 +220,11 @@ public class CSVReader {
         return Math.pow(10.0, exp);
     }
 
-    public static LatLng getLocationByTrilateration(
+    public static LatLng getLocationByTrilateration(ArrayList<Trilat> trilat)
+   /* (
             LatLng location1, double distance1,
             LatLng location2, double distance2,
-            LatLng location3, double distance3) {
+            LatLng location3, double distance3) */ {
 //DECLARE VARIABLES
 
         double[] P1 = new double[2];
@@ -247,6 +248,18 @@ public class CSVReader {
         double exx;
         double d;
         double eyy;
+
+        LatLng location1 = null, location2 = null, location3 = null;
+        location1 = trilat.get(0).getLatLng();
+        location2 = trilat.get(1).getLatLng();
+        location3 = trilat.get(2).getLatLng();
+
+        double distance1, distance2, distance3;
+
+        distance1 = trilat.get(0).getDistance();
+        distance2 = trilat.get(1).getDistance();
+        distance3 = trilat.get(2).getDistance();
+
 //TRANSALTE POINTS TO VECTORS
 //POINT 1
         P1[0] = location1.latitude;
@@ -319,5 +332,6 @@ public class CSVReader {
         tripty = t1 + t2 + t3;
         return new LatLng(triptx, tripty);
     }
+
 
 }
