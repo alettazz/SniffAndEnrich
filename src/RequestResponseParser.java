@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class RequestResponseParser {
@@ -8,10 +6,14 @@ public class RequestResponseParser {
     private static final String PROBE_RESPONSE = "Probe Response";
     private static final String BROADCAST = "ff:ff:ff:ff:ff:ff";
     private static ArrayList<Capture> captures;
+    private static int counter = 1;
+    private static StringBuilder sb;
+    static PrintWriter pw = null;
+
     private static HashMap<String, Record> records = new HashMap<String, Record>();
 
     public static void main(String[] args) {
-        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/MERESEK/FinalCulomnization.csv";
+        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/MERESEK/FinalCulomnizationCPY.csv";
         String line = "";
         String cvsSplitBy = ",";
         captures = new ArrayList<>();
@@ -38,9 +40,45 @@ public class RequestResponseParser {
 
         createRecords();
 
-        System.out.println("vege");
+        System.out.println("vege" + records.size());
+
+        initFile();
 
         processRecordIntoActivity();
+
+        pw.close();
+    }
+
+    private static void initFile() {
+        try {
+            pw = new PrintWriter(new File("test_dist.csv"));
+            sb = new StringBuilder();
+            sb.append("activity_ID"); //counter
+            sb.append(',');
+            sb.append("mac_address"); //key
+            sb.append(',');
+            sb.append("vendor");
+            sb.append(',');
+            sb.append("first_Try"); //objecy.get0
+            sb.append(',');
+            sb.append("second_try");
+            sb.append(',');
+            sb.append("third_try");
+            sb.append(',');
+            sb.append("dist_1");
+            sb.append(',');
+            sb.append("dist_2");
+            sb.append(',');
+            sb.append("dist_3");
+            sb.append(',');
+
+
+            pw.write(sb.toString());
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private static LatLng matchLocationSSID(String SSID) {
@@ -78,14 +116,23 @@ public class RequestResponseParser {
             String key = entry.getKey();
             Record value = entry.getValue();
             Date timeToCheck = new Date();
-            for (Capture request : value.getRequests())
+            Map<String, Double> mapRSSIDistance = new HashMap<>();
+            for (Capture request : value.getRequests()) {
+
                 if (request.getDestinationMAC().equals(BROADCAST)) {
                     timeToCheck = request.getTime();
+                    if (request.getWlanSSID().equals("Internet")) {
+
+                        mapRSSIDistance.put(request.getWlanSSID(), calculateDistance(Double.parseDouble(request.getRssi().substring(0, 2)), 2.4));
+                    }
                 }
-            Map<String, Double> mapRSSIDistance = new HashMap<>();
+            }
             for (Capture respons : value.getResponses()) {
                 if (respons.getTime().equals(timeToCheck)) {//plus min
-                    mapRSSIDistance.put(respons.getWlanSSID(), calculateDistance(Double.parseDouble(respons.getRssi().substring(0, 2)), 2.4));
+                    if (!respons.getWlanSSID().equals("Emikroszkop")) {
+
+                        mapRSSIDistance.put(respons.getWlanSSID(), calculateDistance(Double.parseDouble(respons.getRssi().substring(0, 2)), 2.4));
+                    }
 
                 }
 
@@ -104,9 +151,70 @@ public class RequestResponseParser {
 
         }
         if (mapRSSIDistance.entrySet().size() >= 3) {
+            mapRSSIDistance = sortbykey(mapRSSIDistance);
             LatLng locationByTrilateration = CSVReader.getLocationByTrilateration(trilat);
-            System.out.println("MAC address: " + key + " at time of: " + timeToCheck + " was at:   " + locationByTrilateration.latitude + " " + locationByTrilateration.longitude + "   being connected to " + mapRSSIDistance.keySet().toString());
+            System.out.println(counter + " MAC address: " + key + " at time of: " + timeToCheck + " was at:   " + locationByTrilateration.latitude + " " + locationByTrilateration.longitude + "   being connected to " + mapRSSIDistance.keySet().toString());
+            counter++;
+            writeCSV(counter, key, timeToCheck, mapRSSIDistance.keySet().toArray(), mapRSSIDistance.values().toArray(), locationByTrilateration);
+
+
         }
+
+    }
+
+    public static TreeMap<String, Double> sortbykey(Map<String, Double> map) {
+        TreeMap<String, Double> sorted = new TreeMap<>();
+
+        sorted.putAll(map);
+
+        /*for (Map.Entry<String, Double> entry : sorted.entrySet())
+            System.out.println("Key = " + entry.getKey() +
+                    ", Value = " + entry.getValue());*/
+        return sorted;
+    }
+
+    public static HashMap<String, Integer> sortByValue(HashMap<String, Integer> hm) {
+        List<Map.Entry<String, Integer>> list =
+                new LinkedList<Map.Entry<String, Integer>>(hm.entrySet());
+
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+            public int compare(Map.Entry<String, Integer> o1,
+                               Map.Entry<String, Integer> o2) {
+                return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
+        for (Map.Entry<String, Integer> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
+    }
+
+    private static void writeCSV(int counter, String key, Date timeToCheck, Object[] objects, Object[] toArray, LatLng locationByTrilateration) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("\n");
+        sb.append(counter);
+        sb.append(",");
+        sb.append(key);
+        sb.append(",");
+        sb.append(" ");
+        sb.append(",");
+        sb.append(objects[0]);
+        sb.append(",");
+        sb.append(objects[1]);
+        sb.append(",");
+        sb.append(objects[2]);
+        sb.append(",");
+        sb.append(toArray[0]);
+        sb.append(",");
+        sb.append(toArray[1]);
+        sb.append(",");
+        sb.append(toArray[2]);
+        sb.append(",");
+
+        pw.write(sb.toString());
 
     }
 

@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b33eb9a1-fcee-4b6f-936e-70cae0f6e3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jnetpcap_jnetpcap_1_4_r1425_1g.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/Capture$CaptureComparator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/Capture.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/Record.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestActivity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestResponseParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/ResponseActivity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/Trilat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parsermaven/parsermaven.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parsermaven/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Capture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Record.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RequestActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RequestResponseParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ResponseActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trilat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WifiSniffingRoute" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/CSVReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/CSVReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSVReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Capture$CaptureComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/Capture$CaptureComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestResponseParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestResponseParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Trilat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabaseCleaner/Trilat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestResponseParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestResponseParser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/parsermaven/target/" />
@@ -40,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSVReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="223" column="28" selection-start-line="223" selection-start-column="28" selection-end-line="223" selection-end-column="28" />
+            <state relative-caret-position="412">
+              <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-end-line="178" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#orderProcessedActivitiesByDate#0;class#CSVReader#0" />
@@ -53,12 +35,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RequestResponseParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="340">
+              <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#407#423#0" expanded="true" />
-                <element signature="e#3516#3524#0" expanded="true" />
+                <element signature="method#sortbykey#0;class#RequestResponseParser#0" />
+                <element signature="method#sortByValue#0;class#RequestResponseParser#0" />
+                <element signature="e#4805#4834#0" expanded="true" />
+                <element signature="e#6355#6629#0" expanded="true" />
+                <element signature="e#6628#6629#0" expanded="true" />
+                <element signature="e#5294#5311#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Trilat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -76,39 +62,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Capture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            <state relative-caret-position="765">
+              <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2481#2482#0" expanded="true" />
-                <element signature="e#2609#2610#0" expanded="true" />
-                <element signature="e#2663#2664#0" expanded="true" />
-                <element signature="e#2727#2728#0" expanded="true" />
-                <element signature="e#2783#2784#0" expanded="true" />
-                <element signature="e#2851#2852#0" expanded="true" />
-                <element signature="e#2943#2944#0" expanded="true" />
-                <element signature="e#3021#3022#0" expanded="true" />
-                <element signature="e#3133#3134#0" expanded="true" />
+                <element signature="e#3147#3148#0" expanded="true" />
                 <element signature="e#3199#3200#0" expanded="true" />
-                <element signature="e#3287#3288#0" expanded="true" />
-                <element signature="e#3345#3346#0" expanded="true" />
-                <element signature="e#3417#3418#0" expanded="true" />
-                <element signature="e#3485#3486#0" expanded="true" />
-                <element signature="e#3577#3578#0" expanded="true" />
-                <element signature="e#3650#3651#0" expanded="true" />
-                <element signature="e#3750#3751#0" expanded="true" />
-                <element signature="e#3820#3821#0" expanded="true" />
-                <element signature="e#3916#3917#0" expanded="true" />
+                <element signature="e#3938#3939#0" expanded="true" />
                 <element signature="e#3982#3983#0" expanded="true" />
-                <element signature="e#4070#4071#0" expanded="true" />
+                <element signature="e#4096#4097#0" expanded="true" />
                 <element signature="e#4136#4137#0" expanded="true" />
-                <element signature="e#4224#4225#0" expanded="true" />
-                <element signature="e#4294#4295#0" expanded="true" />
-                <element signature="e#4390#4391#0" expanded="true" />
-                <element signature="e#4476#4477#0" expanded="true" />
-                <element signature="e#4604#4605#0" expanded="true" />
-                <element signature="e#4676#4677#0" expanded="true" />
-                <element signature="e#4776#4777#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/RequestActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -152,7 +115,12 @@
       <find>depen</find>
       <find>ma</find>
       <find>sort</find>
+      <find>88:b4:a6:da:d8:ee</find>
+      <find>timeto</find>
+      <find>da:a1:19:fd:49:92</find>
+      <find>wl</find>
       <find>dis</find>
+      <find>Internet</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Aletta\IdeaProjects\DatabaseCleaner</dir>
@@ -217,8 +185,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,7 +194,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550432388236" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550473119093" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -320,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549300321986</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="tcpdump parsing added with filtering request and matching against responses, calculates location of a mac address with trilateration">
+      <created>1550432483040</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1550432483040</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -334,8 +309,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19402985" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -344,12 +320,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.34669557" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989339" weight="0.3629469" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3726977" />
+      <window_info anchor="bottom" x="1388" y="352" width="1876" height="335" id="Debug" order="3" sideWeight="0.4989339" weight="0.3629469" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" weight="0.42578548" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
@@ -374,7 +350,8 @@
     <MESSAGE value="Splits activity based on time intervals" />
     <MESSAGE value="Distance calculation and trilateration added" />
     <MESSAGE value="Distance row on filtered ssid" />
-    <option name="LAST_COMMIT_MESSAGE" value="Distance row on filtered ssid" />
+    <MESSAGE value="tcpdump parsing added with filtering request and matching against responses, calculates location of a mac address with trilateration" />
+    <option name="LAST_COMMIT_MESSAGE" value="tcpdump parsing added with filtering request and matching against responses, calculates location of a mac address with trilateration" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -383,75 +360,75 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CSVReader.java</url>
-          <line>202</line>
+          <line>201</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CSVReader.java</url>
-          <line>204</line>
+          <line>203</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CSVReader.java</url>
-          <line>207</line>
+          <line>206</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CSVReader.java</url>
-          <line>40</line>
+          <line>39</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CSVReader.java</url>
-          <line>30</line>
+          <line>29</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CSVReader.java</url>
-          <line>32</line>
+          <line>31</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
-          <line>78</line>
+          <line>114</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
-          <line>94</line>
+          <line>139</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
-          <line>87</line>
+          <line>118</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
-          <line>85</line>
+          <line>127</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
-          <line>89</line>
+          <line>133</line>
           <properties />
           <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -542,16 +519,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CAPTURE_TYPE.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ResponseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CAPTURE_TYPE.java" />
     <entry file="file://$PROJECT_DIR$/src/Record.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -587,63 +555,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RequestActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/Trilat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Capture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        <state relative-caret-position="765">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2481#2482#0" expanded="true" />
-            <element signature="e#2609#2610#0" expanded="true" />
-            <element signature="e#2663#2664#0" expanded="true" />
-            <element signature="e#2727#2728#0" expanded="true" />
-            <element signature="e#2783#2784#0" expanded="true" />
-            <element signature="e#2851#2852#0" expanded="true" />
-            <element signature="e#2943#2944#0" expanded="true" />
-            <element signature="e#3021#3022#0" expanded="true" />
-            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3147#3148#0" expanded="true" />
             <element signature="e#3199#3200#0" expanded="true" />
-            <element signature="e#3287#3288#0" expanded="true" />
-            <element signature="e#3345#3346#0" expanded="true" />
-            <element signature="e#3417#3418#0" expanded="true" />
-            <element signature="e#3485#3486#0" expanded="true" />
-            <element signature="e#3577#3578#0" expanded="true" />
-            <element signature="e#3650#3651#0" expanded="true" />
-            <element signature="e#3750#3751#0" expanded="true" />
-            <element signature="e#3820#3821#0" expanded="true" />
-            <element signature="e#3916#3917#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
             <element signature="e#3982#3983#0" expanded="true" />
-            <element signature="e#4070#4071#0" expanded="true" />
+            <element signature="e#4096#4097#0" expanded="true" />
             <element signature="e#4136#4137#0" expanded="true" />
-            <element signature="e#4224#4225#0" expanded="true" />
-            <element signature="e#4294#4295#0" expanded="true" />
-            <element signature="e#4390#4391#0" expanded="true" />
-            <element signature="e#4476#4477#0" expanded="true" />
-            <element signature="e#4604#4605#0" expanded="true" />
-            <element signature="e#4676#4677#0" expanded="true" />
-            <element signature="e#4776#4777#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Trilat.java">
+    <entry file="file://$PROJECT_DIR$/src/ResponseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RequestActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSVReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="223" column="28" selection-start-line="223" selection-start-column="28" selection-end-line="223" selection-end-column="28" />
+        <state relative-caret-position="412">
+          <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-end-line="178" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#orderProcessedActivitiesByDate#0;class#CSVReader#0" />
@@ -653,12 +605,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RequestResponseParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="340">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#407#423#0" expanded="true" />
-            <element signature="e#3516#3524#0" expanded="true" />
+            <element signature="method#sortbykey#0;class#RequestResponseParser#0" />
+            <element signature="method#sortByValue#0;class#RequestResponseParser#0" />
+            <element signature="e#4805#4834#0" expanded="true" />
+            <element signature="e#6355#6629#0" expanded="true" />
+            <element signature="e#6628#6629#0" expanded="true" />
+            <element signature="e#5294#5311#0" expanded="true" />
           </folding>
         </state>
       </provider>
