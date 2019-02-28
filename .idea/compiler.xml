@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="parsermaven" target="1.5" />
+      <module name="parsermaven" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>

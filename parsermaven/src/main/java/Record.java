@@ -1,3 +1,8 @@
+import com.martiansoftware.macnificent.MacAddress;
+import com.martiansoftware.macnificent.Oui;
+import com.martiansoftware.macnificent.OuiRegistry;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Record {
@@ -6,17 +11,20 @@ public class Record {
     private ArrayList<Capture> requests = new ArrayList<>();
     private ArrayList<Capture> responses = new ArrayList<>();
     private LatLng latLng = new LatLng(0, 0);
+    private OuiRegistry reg;
 
     public Record(String sourceMAC) {
         this.macID = sourceMAC;
-        this.vendor = "";
+        try {
+            reg = new OuiRegistry();
+            MacAddress mac = new MacAddress(sourceMAC); // can also create from byte[] or NetworkInterface
+            Oui oui = reg.getOui(mac);
+            System.out.println("  Manufacturer:  " + (oui == null ? "Unknown" : oui.getManufacturer()));
+            this.vendor = oui.getManufacturer();
 
-       /* MacAddress mac = new MacAddress(s); // can also create from byte[] or NetworkInterface
-        Oui oui = reg.getOui(mac);
-        System.out.println("   MAC Address:  " + mac);
-        System.out.println("   isMulticast:  " + mac.isMulticast());
-        System.out.println("       isLocal:  " + mac.isLocal());
-        System.out.println("  Manufacturer:  " + (oui == null ? "Unknown" : oui.getManufacturer()));*/
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
