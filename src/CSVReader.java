@@ -1,3 +1,5 @@
+package src;
+
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -187,7 +189,7 @@ public class CSVReader {
             activity.orderActivitiesByDate();
             System.out.println("Activity + " + activity.toString());
 
-            /*for (Probe probe : activity.getProbes()) {
+            /*for (src.Probe probe : activity.getProbes()) {
                 System.out.println("Activity + " + probe.toString());
             }*/
         }
@@ -222,9 +224,9 @@ public class CSVReader {
 
     public static LatLng getLocationByTrilateration(ArrayList<Trilat> trilat)
    /* (
-            LatLng location1, double distance1,
-            LatLng location2, double distance2,
-            LatLng location3, double distance3) */ {
+            src.LatLng location1, double distance1,
+            src.LatLng location2, double distance2,
+            src.LatLng location3, double distance3) */ {
 //DECLARE VARIABLES
 
         double[] P1 = new double[2];

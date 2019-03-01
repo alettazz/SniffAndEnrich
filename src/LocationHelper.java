@@ -1,3 +1,5 @@
+package src;
+
 public class LocationHelper {
     public static LatLng calculateIntersection(int x0, int y0, int x1, int y1, int r0, int r1) {
         double d;

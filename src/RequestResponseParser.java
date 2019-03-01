@@ -1,10 +1,12 @@
+package src;
+
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class RequestResponseParser {
-    private static final String PROBE_REQUEST = "Probe Request";
-    private static final String PROBE_RESPONSE = "Probe Response";
+    private static final String PROBE_REQUEST = "src.Probe Request";
+    private static final String PROBE_RESPONSE = "src.Probe Response";
     private static final String BROADCAST = "ff:ff:ff:ff:ff:ff";
     private static ArrayList<Capture> captures;
     private static int counter = 1;
@@ -16,7 +18,7 @@ public class RequestResponseParser {
     private static int strangerId = 0;
 
     public static void main(String[] args) {
-        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/MERESEK/febr21.csv";
+        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/MERESEK/febr26/febr26.csv";
         String line = "";
         String cvsSplitBy = ",";
         captures = new ArrayList<>();
@@ -86,7 +88,7 @@ public class RequestResponseParser {
 
     private static void initFile() {
         try {
-            pw = new PrintWriter(new File("test_dist_loc_febr20.csv"));
+            pw = new PrintWriter(new File("test_dist_loc_febr26.csv"));
             System.out.println(pw.toString());
             sb = new StringBuilder();
             sb.append("activity_ID"); //counter
@@ -113,8 +115,6 @@ public class RequestResponseParser {
             sb.append(',');
             sb.append("Vendor");
             sb.append(',');
-
-
 
 
             pw.write(sb.toString());

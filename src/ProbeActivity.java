@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -28,14 +30,15 @@ public class ProbeActivity {
 
     @Override
     public String toString() {
-        return "ProbeActivity{" +
+        return "src.ProbeActivity{" +
                 "probes=" + probes +
                 '}';
     }
+
     public static class ProbeActivityComparator implements Comparator<Probe> {
         @Override
         public int compare(Probe o1, Probe o2) {
             return o1.getDate().compareTo(o2.getDate());
         }
     }
-    }
+}

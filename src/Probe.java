@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Comparator;
 
 public class Probe {
@@ -57,7 +59,7 @@ public class Probe {
 
     @Override
     public String toString() {
-        return "Probe{" +
+        return "src.Probe{" +
                 "mac_address='" + mac_address + '\'' +
                 ", vendor='" + vendor + '\'' +
                 ", ssid='" + ssid + '\'' +

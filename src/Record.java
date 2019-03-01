@@ -1,3 +1,6 @@
+package src;
+
+
 import java.util.ArrayList;
 
 public class Record {
@@ -11,13 +14,19 @@ public class Record {
         this.macID = sourceMAC;
         this.vendor = "";
 
-       /* MacAddress mac = new MacAddress(s); // can also create from byte[] or NetworkInterface
+        /*MacAddress mac = new MacAddress(sourceMAC); // can also create from byte[] or NetworkInterface
+        OuiRegistry reg = null;
+        try {
+            reg = new OuiRegistry();
+
         Oui oui = reg.getOui(mac);
         System.out.println("   MAC Address:  " + mac);
         System.out.println("   isMulticast:  " + mac.isMulticast());
         System.out.println("       isLocal:  " + mac.isLocal());
-        System.out.println("  Manufacturer:  " + (oui == null ? "Unknown" : oui.getManufacturer()));*/
-
+        System.out.println("  Manufacturer:  " + (oui == null ? "Unknown" : oui.getManufacturer()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
     }
 
     public void addToRequestList(Capture capture) {

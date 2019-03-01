@@ -1,3 +1,5 @@
+package src;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,7 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * MAC Vendor Lookup class.
+ * MAC Vendor src.Lookup class.
  * www.JamesDonnell.com
  *
  * @author James A. Donnell Jr.

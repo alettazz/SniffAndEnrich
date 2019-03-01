@@ -1,3 +1,5 @@
+package src;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
@@ -172,7 +174,7 @@ public class Capture {
 
     @Override
     public String toString() {
-        return "Capture{" +
+        return "src.Capture{" +
                 "id='" + id + '\'' +
                 ", time='" + time + '\'' +
                 ", sourceMAC='" + sourceMAC + '\'' +

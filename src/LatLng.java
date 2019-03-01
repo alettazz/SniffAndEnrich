@@ -1,3 +1,5 @@
+package src;
+
 public class LatLng implements Comparable<LatLng> {
 
     public double latitude;
