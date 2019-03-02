@@ -2,56 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b33eb9a1-fcee-4b6f-936e-70cae0f6e3d6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jnetpcap_jnetpcap_1_4_r1425_1g.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jnetpcap_jnetpcap_1_4_r1425_1g.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vendor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseCleaner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseCleaner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/CSVReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Capture$CaptureComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Capture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/LatLng.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/LocationHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Lookup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/META-INF/DatabaseCleaner.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Probe$ProbeComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Probe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/ProbeActivity$ProbeActivityComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/ProbeActivity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Record.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestActivity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestResponseParser$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestResponseParser$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/RequestResponseParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/ResponseActivity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabaseCleaner/Trilat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/parsermaven.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/CSVReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/Capture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/LatLng.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/LocationHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/Lookup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/Probe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/ProbeActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/Record.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/RequestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/RequestResponseParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/ResponseActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsermaven/src/main/java/Trilat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSVReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Capture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LatLng.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocationHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lookup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Probe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProbeActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Record.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RequestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RequestResponseParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResponseActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trilat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Capture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Capture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestResponseParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestResponseParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/Capture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/Capture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/ProbeActivity$ProbeActivityComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/ProbeActivity$ProbeActivityComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/Record.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/RequestResponseParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/RequestResponseParser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/RequestResponseParser$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/RequestResponseParser$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/RequestResponseParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/RequestResponseParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/test_dist_loc_febr21.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/test_dist_loc_febr21.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test_dist_loc_febr21.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test_dist_loc_febr21.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_dist_loc_febr21.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_dist_loc_febr21.csv" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/parsermaven/target/" />
@@ -67,53 +34,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RequestResponseParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="294" column="23" selection-start-line="294" selection-start-column="23" selection-end-line="294" selection-end-column="23" />
+            <state relative-caret-position="112">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding>
+                <element signature="e#10616#10877#0" expanded="true" />
+                <element signature="e#10876#10877#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LocationHelper.java">
+        <entry file="file://$PROJECT_DIR$/src/Capture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LatLng.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Lookup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Probe.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ProbeActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="55">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -121,10 +56,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Record.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="714">
+              <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1371#1372#0" expanded="true" />
+                <element signature="e#1451#1452#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,12 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ma</find>
-      <find>sort</find>
-      <find>88:b4:a6:da:d8:ee</find>
-      <find>timeto</find>
-      <find>da:a1:19:fd:49:92</find>
-      <find>wl</find>
       <find>dis</find>
       <find>Internet</find>
       <find>dist</find>
@@ -165,13 +96,19 @@
       <find>-2</find>
       <find>-4</find>
       <find>trilat</find>
-      <find>ini</find>
       <find>vend</find>
       <find>mac</find>
       <find>tril</find>
       <find>tr</find>
       <find>pinp</find>
       <find>classpa</find>
+      <find>&lt;VendorMapping</find>
+      <find>ini</find>
+      <find>csvFile</find>
+      <find>macve</find>
+      <find>init</find>
+      <find>Appl</find>
+      <find>mat</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -203,7 +140,6 @@
         <option value="$PROJECT_DIR$/parsermaven/pom.xml" />
         <option value="$PROJECT_DIR$/test_dist_loc.csv" />
         <option value="$PROJECT_DIR$/parsermaven/src/main/java/RequestResponseParser.java" />
-        <option value="$PROJECT_DIR$/src/Capture.java" />
         <option value="$PROJECT_DIR$/src/LocationHelper.java" />
         <option value="$PROJECT_DIR$/src/LatLng.java" />
         <option value="$PROJECT_DIR$/src/Lookup.java" />
@@ -212,10 +148,13 @@
         <option value="$PROJECT_DIR$/src/Trilat.java" />
         <option value="$PROJECT_DIR$/src/CSVReader.java" />
         <option value="$PROJECT_DIR$/src/main/resources/RequestResponseParser.java" />
-        <option value="$PROJECT_DIR$/src/RequestResponseParser.java" />
         <option value="$PROJECT_DIR$/RequestResponseParser.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/Record.java" />
+        <option value="$USER_HOME$/Desktop/sniffngo/vendorMacs.xml" />
+        <option value="$PROJECT_DIR$/src/Vendor.java" />
+        <option value="$PROJECT_DIR$/src/Capture.java" />
+        <option value="$PROJECT_DIR$/src/RequestResponseParser.java" />
       </list>
     </option>
   </component>
@@ -238,7 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,7 +194,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,8 +202,8 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551421468907" />
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/com/martiansoftware/macnificent/0.2.0/macnificent-0.2.0.jar!/META-INF/maven/com.martiansoftware/macnificent" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551452019988" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/sniffngo/vendorMacs.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -405,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550478636567</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updated maven repository">
+      <created>1551425638133</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551425638133</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -419,8 +365,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19062027" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19364598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -429,8 +376,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.23895253" />
-      <window_info anchor="bottom" x="1388" y="352" width="1876" height="335" id="Debug" order="3" sideWeight="0.4989339" weight="0.43862522" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.4844517" />
+      <window_info anchor="bottom" x="1388" y="352" width="1876" height="335" id="Debug" order="3" sideWeight="0.4989339" weight="0.64811784" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -474,7 +421,8 @@
     <MESSAGE value="writing trilateration coordinates to csv" />
     <MESSAGE value="trilateration ap csv file" />
     <MESSAGE value="trilateration ap csv file wit LAT LNG" />
-    <option name="LAST_COMMIT_MESSAGE" value="trilateration ap csv file wit LAT LNG" />
+    <MESSAGE value="updated maven repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated maven repository" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -483,33 +431,45 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Record.java</url>
-          <line>32</line>
+          <line>27</line>
           <properties />
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Record.java</url>
-          <line>28</line>
+          <line>23</line>
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Record.java</url>
-          <line>30</line>
+          <line>25</line>
           <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Record.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Record.java</url>
-          <line>31</line>
+          <line>26</line>
           <properties />
           <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/RequestResponseParser.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -628,23 +588,23 @@
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-27">
           <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test_dist_loc.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="50" lean-forward="true" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/codeStyles/Project.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -652,29 +612,18 @@
     <entry file="file://$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_dist_loc_febr21.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret column="47" lean-forward="true" selection-start-column="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_dist_loc_febr20.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="54" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="54" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -692,13 +641,6 @@
     <entry file="file://$PROJECT_DIR$/parsermaven/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/RequestActivity.java" />
     <entry file="file://$PROJECT_DIR$/src/ResponseActivity.java" />
-    <entry file="file://$PROJECT_DIR$/src/Capture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CSVReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -737,24 +679,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LatLng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lookup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Probe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LatLng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -767,18 +702,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Record.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="714">
+          <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1371#1372#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/sniffngo/vendorMacs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lookup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vendor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_dist_loc_febr26.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_dist_loc_febr21.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state>
+          <caret column="47" lean-forward="true" selection-start-column="47" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/text/DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Capture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RequestResponseParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="294" column="23" selection-start-line="294" selection-start-column="23" selection-end-line="294" selection-end-column="23" />
+        <state relative-caret-position="112">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="e#10616#10877#0" expanded="true" />
+            <element signature="e#10876#10877#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

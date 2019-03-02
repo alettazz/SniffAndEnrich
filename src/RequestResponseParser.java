@@ -11,17 +11,19 @@ public class RequestResponseParser {
     private static ArrayList<Capture> captures;
     private static int counter = 1;
     private static StringBuilder sb;
-    static PrintWriter pw = null;
-
+    private static PrintWriter pw = null;
     private static HashMap<String, Record> records = new HashMap<String, Record>();
     private static ArrayList<String> strangers = new ArrayList<>();
     private static int strangerId = 0;
+    private static Map<String, String> macVendors;
 
     public static void main(String[] args) {
-        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/MERESEK/febr26/febr26.csv";
+        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/MERESEK/febr21/feb21.csv";
         String line = "";
         String cvsSplitBy = ",";
         captures = new ArrayList<>();
+
+        initOUI();
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
@@ -73,6 +75,28 @@ public class RequestResponseParser {
 
     }
 
+    private static void initOUI() {
+        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/vendorMacs.csv";
+        String line = "";
+        String cvsSplitBy = ",";
+        macVendors = new HashMap<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+
+            while ((line = br.readLine()) != null) {
+
+                String[] split = line.split(cvsSplitBy);
+                Vendor vendor = new Vendor(split[0], split[1]);
+                //  System.out.println(vendor.getMacPreffix() + " " + vendor.getVendor());
+                macVendors.put(vendor.getMacPreffix(), vendor.getVendor());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private static void createGroups(int min) {
         Collections.sort((List<Record>) records.values(), new Comparator<Record>() {
                     @Override
@@ -88,7 +112,7 @@ public class RequestResponseParser {
 
     private static void initFile() {
         try {
-            pw = new PrintWriter(new File("test_dist_loc_febr26.csv"));
+            pw = new PrintWriter(new File("test_dist_loc_febr21.csv"));
             System.out.println(pw.toString());
             sb = new StringBuilder();
             sb.append("activity_ID"); //counter
@@ -113,9 +137,6 @@ public class RequestResponseParser {
             sb.append(',');
             sb.append("LON");
             sb.append(',');
-            sb.append("Vendor");
-            sb.append(',');
-
 
             pw.write(sb.toString());
 
@@ -214,12 +235,24 @@ public class RequestResponseParser {
             System.out.println(counter + " MAC address: " + key + " at time of: " + timeToCheck + " was at:   " + locationByTrilateration.latitude + " " + locationByTrilateration.longitude + "   being connected to " + mapRSSIDistance.keySet().toString());
             counter++;
             records.get(key).setLatLng(locationByTrilateration);
+            records.get(key).setVendor(matchMACtoVendor(key));
             writeCSV(counter, key, timeToCheck, mapRSSIDistance.keySet().toArray(), mapRSSIDistance.values().toArray(), locationByTrilateration, records.get(key).getVendor());
 
+
+        } else {
+            System.out.println("no trilat");
 
         }
 
     }
+
+    private static String matchMACtoVendor(String key) {
+        String s = macVendors.get(key.substring(0, 6));
+        System.out.println(key + " " + s);
+
+        return null;
+    }
+
 
     public static TreeMap<String, Double> sortbykey(Map<String, Double> map) {
         TreeMap<String, Double> sorted = new TreeMap<>();
@@ -290,10 +323,10 @@ public class RequestResponseParser {
 
             for (Capture capture : captures) {
                 if (record.getMacID().equals(capture.getSourceMAC())) {
-                    if (capture.getCaptureType().equals(PROBE_REQUEST)) {
+                    //if (capture.getCaptureType().equals(PROBE_REQUEST)) {
 
                         record.addToRequestList(capture);
-                    }
+                    // }
                 }
             }
             for (Capture capture : captures) {

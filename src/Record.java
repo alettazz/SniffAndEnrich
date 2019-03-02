@@ -46,6 +46,10 @@ public class Record {
         this.latLng = latLng;
     }
 
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
+
     public String getVendor() {
         return vendor;
     }
