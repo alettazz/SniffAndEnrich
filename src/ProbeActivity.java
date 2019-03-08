@@ -6,8 +6,12 @@ import java.util.Comparator;
 
 public class ProbeActivity {
 
+    private String mac = "";
     private ArrayList<Probe> probes=  new ArrayList<>();
 
+    public ProbeActivity(String mac) {
+        this.mac = mac;
+    }
     public ProbeActivity() {
     }
 

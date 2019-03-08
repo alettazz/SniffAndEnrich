@@ -10,23 +10,21 @@ public class Record {
     private ArrayList<Capture> responses = new ArrayList<>();
     private LatLng latLng = new LatLng(0, 0);
 
+    @Override
+    public String toString() {
+        return "Record{" +
+                "macID='" + macID + '\'' +
+                ", vendor='" + vendor + '\'' +
+                ", requests=" + requests +
+                ", responses=" + responses +
+                ", latLng=" + latLng +
+                '}';
+    }
+
     public Record(String sourceMAC) {
         this.macID = sourceMAC;
         this.vendor = "";
 
-        /*MacAddress mac = new MacAddress(sourceMAC); // can also create from byte[] or NetworkInterface
-        OuiRegistry reg = null;
-        try {
-            reg = new OuiRegistry();
-
-        Oui oui = reg.getOui(mac);
-        System.out.println("   MAC Address:  " + mac);
-        System.out.println("   isMulticast:  " + mac.isMulticast());
-        System.out.println("       isLocal:  " + mac.isLocal());
-        System.out.println("  Manufacturer:  " + (oui == null ? "Unknown" : oui.getManufacturer()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     public void addToRequestList(Capture capture) {

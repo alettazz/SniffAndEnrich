@@ -5,8 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class RequestResponseParser {
-    private static final String PROBE_REQUEST = "src.Probe Request";
-    private static final String PROBE_RESPONSE = "src.Probe Response";
+    private static final String PROBE_REQUEST = "Probe Request";
+    private static final String PROBE_RESPONSE = "Probe Response";
     private static final String BROADCAST = "ff:ff:ff:ff:ff:ff";
     private static ArrayList<Capture> captures;
     private static int counter = 1;
@@ -16,9 +16,17 @@ public class RequestResponseParser {
     private static ArrayList<String> strangers = new ArrayList<>();
     private static int strangerId = 0;
     private static Map<String, String> macVendors;
+    private static PrintWriter pw2 = null;
+    private static HashMap<String, LatLng> history = new HashMap<>();
+    private static String historyFile;
+    private static String outputFile;
 
-    public static void main(String[] args) {
-        String csvFile = "C:/Users/Aletta/Desktop/sniffngo/MERESEK/febr21/feb21.csv";
+    public static void run(String csvFile, String output, String historyFileParam) {
+
+        //initializing the files
+        historyFile = historyFileParam;
+        outputFile = output;
+
         String line = "";
         String cvsSplitBy = ",";
         captures = new ArrayList<>();
@@ -40,38 +48,154 @@ public class RequestResponseParser {
         }
 
         captures.remove(0);
+        System.out.print("Capture number: " + captures.size());
 
         Collections.sort(captures, new Capture.CaptureComparator());
 
-        System.out.print("kezdet ido  ");
+        System.out.print("Start time  ");
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         System.out.println(sdf.format(cal.getTime()));
 
         createRecords();
 
-        System.out.println("vege" + records.size());
+        System.out.println("Records created " + records.size());
 
         initFile();
 
-        processRecordIntoActivity();
+        //  processRecordIntoActivity();
+
+        initHistoryFile();
+
+        createHistory();
 
         pw.close();
-        System.out.println("First seen");
+        pw2.close();
+        System.out.println("Files closed");
 
 
         Set<String> unique = new HashSet<>(strangers);
 
-        for (String s : unique) {
-            // System.out.println("Unique stranger mac: " +s);
-
-        }
-        System.out.println(unique.size());
+        //  System.out.println(unique.size());
         Calendar cal1 = Calendar.getInstance();
         SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm:ss");
-        System.out.println("vege ido" + sdf1.format(cal1.getTime()));
+        System.out.println("End time" + sdf1.format(cal1.getTime()));
 
         // createGroups(5);
+
+    }
+
+    private static void initHistoryFile() {
+
+        try {
+            System.out.println(historyFile);
+            pw2 = new PrintWriter(new File(historyFile));
+
+            sb = new StringBuilder();
+            sb.append("mac_address"); //key
+            sb.append(',');
+            sb.append("vendor");
+            sb.append(',');
+            sb.append("time");
+            sb.append(',');
+            sb.append("LAT");
+            sb.append(',');
+            sb.append("LON");
+            sb.append(',');
+
+            pw2.write(sb.toString());
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void createHistory() {
+        for (Map.Entry<String, Record> entry : records.entrySet()) {
+            String key = entry.getKey();
+
+            Record value = entry.getValue();
+            Date timeToCheck = new Date();
+
+            for (Capture request : value.getRequests()) {
+
+                timeToCheck = request.getTime();
+                ArrayList<Capture> toTrilat = new ArrayList<>();
+                String checkWlan = "";
+                if (!value.getResponses().isEmpty() && checkProperWlan(value.getResponses().get(0).getWlanSSID())) {
+                    checkWlan = value.getResponses().get(0).getWlanSSID();
+                }
+
+                // for (Capture respons : value.getResponses()) {
+                for (int i = 0; i < value.getResponses().size(); i++) {
+                    Date dateToCheck = value.getResponses().get(i).getTime();
+                    long t = timeToCheck.getTime();
+                    Date startDate = new Date(t - 10 * (6000));
+                    Date endDate = new Date(t + 10 * (6000));
+
+                    if (!dateToCheck.before(startDate) && !dateToCheck.after(endDate)) {
+                        //  System.out.println(startDate.toString() + " " + endDate.toString());
+                        if (!checkWlan.equals(value.getResponses().get(i).getWlanSSID()) && checkProperWlan(value.getResponses().get(i).getWlanSSID())) {
+                            toTrilat.add(value.getResponses().get(i));
+                        }
+                        value.getResponses().remove(i);
+
+                        if (!value.getResponses().isEmpty() && i > 0 && value.getResponses().size() > i) {
+
+                            checkWlan = value.getResponses().get(i - 1).getWlanSSID();
+                        }
+                        i--;
+
+                    }
+                    if (toTrilat.size() >= 3) {
+                        //   System.out.println("van 3");
+                        writeHistory(key, timeToCheck, toTrilat);
+                        toTrilat = new ArrayList<>();
+                    }
+                }
+            }
+        }
+
+    }
+
+    private static boolean checkProperWlan(String wlanSSID) {
+        return wlanSSID.equals("Internet") || wlanSSID.equals("Internet5Ga") || wlanSSID.equals("Internet5Gb") || wlanSSID.equals("Internet5Gc") ||
+                wlanSSID.equals("Internet5G") || wlanSSID.equals("Emikroszkop") || wlanSSID.equals("Pince2");
+    }
+
+    private static void writeHistory(String key, Date timeToCheck, ArrayList<Capture> toTrilat) {
+
+        ArrayList<Trilat> trilat = new ArrayList<Trilat>();
+        for (Capture capture : toTrilat) {
+            trilat.add(new Trilat(matchLocationSSID(capture.getWlanSSID()), calculateDistance(Double.parseDouble(capture.getRssi().substring(0, 3)), 2.4)));
+        }
+        LatLng locationByTrilateration;
+        double[] locationByTrilaterationRes = CSVReader.getLocationByTrilateration2(trilat);
+
+        locationByTrilateration = new LatLng(locationByTrilaterationRes[0], locationByTrilaterationRes[1]);
+
+        if (locationByTrilateration.getLongitude() != 0 && locationByTrilateration.getLatitude() != 0) {
+            //adding the entry to the local history database
+            HistoryHolder.getInstance().addHistoryEntryToMac(key, locationByTrilateration);
+
+            sb.append("\n");
+            sb.append(key);
+            sb.append(",");
+            sb.append(matchMACtoVendor(key));
+            sb.append(",");
+            sb.append(timeToCheck);
+            sb.append(",");
+            sb.append(locationByTrilateration.getLatitude());
+            sb.append(",");
+            sb.append(locationByTrilateration.getLongitude());
+            sb.append(",");
+
+            history.put(key, locationByTrilateration);
+            System.out.println("Ezt irja az allomanyba " + sb.toString());
+            pw2.write(sb.toString());
+
+            // System.out.println(key + " " + timeToCheck + " " + locationByTrilateration.getLatitude() + " " + locationByTrilateration.getLongitude());
+        }
 
     }
 
@@ -97,23 +221,14 @@ public class RequestResponseParser {
 
     }
 
-    private static void createGroups(int min) {
-        Collections.sort((List<Record>) records.values(), new Comparator<Record>() {
-                    @Override
-                    public int compare(Record o1, Record o2) {
-                        return o1.getLatLng().compareTo(o2.getLatLng());
-                    }
-                }
-        );
-        for (Record value : records.values()) {
-            System.out.println("Rec" + value.getLatLng());
-        }
-    }
 
     private static void initFile() {
+
+
         try {
-            pw = new PrintWriter(new File("test_dist_loc_febr21.csv"));
-            System.out.println(pw.toString());
+            System.out.println(outputFile);
+            pw = new PrintWriter(new File(outputFile));
+
             sb = new StringBuilder();
             sb.append("activity_ID"); //counter
             sb.append(',');
@@ -150,21 +265,24 @@ public class RequestResponseParser {
         LatLng latlng = new LatLng(0, 0);
         switch (SSID) {
             case "Internet":
-                latlng = new LatLng(46.522973, 24.598701);
+                latlng = new LatLng(46.522, 24.598);
                 break;
             case "Internet5G":
-                latlng = new LatLng(46.522973, 24.598701);
+                latlng = new LatLng(46.555, 24.601);
                 break;
             case "Internet5Ga":
-                latlng = new LatLng(46.52271327, 24.59885103);
+                latlng = new LatLng(46.543, 24.600);
                 break;
             case "Internet5Gb":
-                latlng = new LatLng(46.523182, 24.598695);
+                latlng = new LatLng(46.533, 24.590);
                 break;
             case "SapiPark":
-                latlng = new LatLng(46.522764, 24.598590);
+                latlng = new LatLng(46.602, 24.598);
                 break;
             case "Pince2":
+                latlng = new LatLng(46.423044, 24.598436);
+                break;
+            case "Emikroszkop":
                 latlng = new LatLng(46.523044, 24.598436);
                 break;
             case "Internet5Gc":
@@ -179,21 +297,38 @@ public class RequestResponseParser {
 
         for (Map.Entry<String, Record> entry : records.entrySet()) {
             String key = entry.getKey();
+            String vendor = matchMACtoVendor(key);
+
             Record value = entry.getValue();
             Date timeToCheck = new Date();
+
             Map<String, Double> mapRSSIDistance = new HashMap<>();
+
+
             if (entry.getValue().getRequests().size() == 1 && !entry.getValue().getRequests().get(0).getWlanSSID().equals("Internet")) {
                 if (entry.getValue().getRequests().get(0).getWlanSSID().equals("")) {
                     strangers.add(entry.getValue().getRequests().get(0).getSourceMAC());
 
                 }
             }
+            /*if (vendor.contains("Samsumg")) {
+                System.out.println("Samsung" + value.getResponses().size());
+            }
+            if (vendor.contains("HUAWEI")) {
+                System.out.println("Huawei" + value.getResponses().size());
+            }
+            if (vendor.contains("Appl")) {
+                System.out.println("Apple" + value.getResponses().size());
+            }*/
+
             for (Capture request : value.getRequests()) {
 
                 if (request.getDestinationMAC().equals(BROADCAST)) {
                     timeToCheck = request.getTime();
-                    if (request.getWlanSSID().equals("Internet") || request.getWlanSSID().equals("Internet5G") || request.getWlanSSID().equals("Internet5Ga") || request.getWlanSSID().equals("Internet5Gb") || request.getWlanSSID().equals("Internet5Gc")) {
+
+                    if (request.getWlanSSID().equals("Emikroszkop") || request.getWlanSSID().equals("Internet") || request.getWlanSSID().equals("Internet5G") || request.getWlanSSID().equals("Internet5Ga") || request.getWlanSSID().equals("Internet5Gb") || request.getWlanSSID().equals("Internet5Gc")) {
                         //check the broadcasted ssid is one of the known from infrastructure
+
                         mapRSSIDistance.put(request.getWlanSSID(), calculateDistance(Double.parseDouble(request.getRssi().substring(0, 2)), 2.4));
                     }
                 }
@@ -203,7 +338,7 @@ public class RequestResponseParser {
             ArrayList<Capture> filteredResponses = new ArrayList<>();
             for (Capture respons : value.getResponses()) {
                 if (respons.getTime().equals(timeToCheck)) {//plus min
-                    if (respons.getWlanSSID().equals("Internet") || respons.getWlanSSID().equals("Internet5G") || respons.getWlanSSID().equals("Internet5Ga") || respons.getWlanSSID().equals("Internet5Gb") || respons.getWlanSSID().equals("Internet5Gc")) {
+                    if (respons.getWlanSSID().equals("Emikroszkop") || respons.getWlanSSID().equals("Internet") || respons.getWlanSSID().equals("Internet5G") || respons.getWlanSSID().equals("Internet5Ga") || respons.getWlanSSID().equals("Internet5Gb") || respons.getWlanSSID().equals("Internet5Gc")) {
                         // || respons.getWlanSSID().equals("Internet5Gc") is optional please check the file that has to be processed
                         filteredResponses.add(respons);
                         mapRSSIDistance.put(respons.getWlanSSID(), calculateDistance(Double.parseDouble(respons.getRssi().substring(0, 2)), 2.4));
@@ -229,28 +364,31 @@ public class RequestResponseParser {
 
         }
         if (mapRSSIDistance.entrySet().size() >= 3) {
-            System.out.println("trilat");
+            // System.out.println("trilat");
             mapRSSIDistance = sortbykey(mapRSSIDistance);
-            LatLng locationByTrilateration = CSVReader.getLocationByTrilateration(trilat);
-            System.out.println(counter + " MAC address: " + key + " at time of: " + timeToCheck + " was at:   " + locationByTrilateration.latitude + " " + locationByTrilateration.longitude + "   being connected to " + mapRSSIDistance.keySet().toString());
+
+            double[] locationByTrilaterationRes = CSVReader.getLocationByTrilateration2(trilat);
+
+
+            LatLng locationByTrilateration = new LatLng(locationByTrilaterationRes[0], locationByTrilaterationRes[1]);
             counter++;
             records.get(key).setLatLng(locationByTrilateration);
             records.get(key).setVendor(matchMACtoVendor(key));
+            System.out.println(counter + " MAC address: " + key + " at time of: " + timeToCheck + " was at:   " + locationByTrilateration.getLatitude() + " " + locationByTrilateration.getLongitude() + "   being connected to " + mapRSSIDistance.keySet().toString() + " having a device of " + records.get(key).getVendor());
             writeCSV(counter, key, timeToCheck, mapRSSIDistance.keySet().toArray(), mapRSSIDistance.values().toArray(), locationByTrilateration, records.get(key).getVendor());
-
-
-        } else {
-            System.out.println("no trilat");
 
         }
 
     }
 
     private static String matchMACtoVendor(String key) {
-        String s = macVendors.get(key.substring(0, 6));
-        System.out.println(key + " " + s);
+        String s = macVendors.get(key.substring(0, 8).toUpperCase());
+        // System.out.println(key + " " + s);
 
-        return null;
+        if (s == null) {
+            s = "";
+        }
+        return s;
     }
 
 
@@ -259,29 +397,9 @@ public class RequestResponseParser {
 
         sorted.putAll(map);
 
-        /*for (Map.Entry<String, Double> entry : sorted.entrySet())
-            System.out.println("Key = " + entry.getKey() +
-                    ", Value = " + entry.getValue());*/
         return sorted;
     }
 
-    public static HashMap<String, Integer> sortByValue(HashMap<String, Integer> hm) {
-        List<Map.Entry<String, Integer>> list =
-                new LinkedList<Map.Entry<String, Integer>>(hm.entrySet());
-
-        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
-            public int compare(Map.Entry<String, Integer> o1,
-                               Map.Entry<String, Integer> o2) {
-                return (o1.getValue()).compareTo(o2.getValue());
-            }
-        });
-
-        HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
-        for (Map.Entry<String, Integer> aa : list) {
-            temp.put(aa.getKey(), aa.getValue());
-        }
-        return temp;
-    }
 
     private static void writeCSV(int counter, String key, Date timeToCheck, Object[] objects, Object[] toArray, LatLng locationByTrilateration, String vendor) {
         StringBuilder sb = new StringBuilder();
@@ -291,7 +409,7 @@ public class RequestResponseParser {
         sb.append(",");
         sb.append(key);
         sb.append(",");
-        sb.append(" ");
+        sb.append(vendor);
         sb.append(",");
         sb.append(objects[0]);
         sb.append(",");
@@ -305,11 +423,9 @@ public class RequestResponseParser {
         sb.append(",");
         sb.append(toArray[2]);
         sb.append(",");
-        sb.append(locationByTrilateration.latitude);
+        sb.append(locationByTrilateration.getLatitude());
         sb.append(",");
-        sb.append(locationByTrilateration.longitude);
-        sb.append(",");
-        sb.append(vendor);
+        sb.append(locationByTrilateration.getLongitude());
         sb.append(",");
 
 
@@ -320,12 +436,12 @@ public class RequestResponseParser {
     public static void createRecords() {
         for (Capture captureFix : captures) {
             Record record = new Record(captureFix.getSourceMAC());
+            record.setVendor(matchMACtoVendor(record.getMacID()));
 
             for (Capture capture : captures) {
                 if (record.getMacID().equals(capture.getSourceMAC())) {
                     //if (capture.getCaptureType().equals(PROBE_REQUEST)) {
-
-                        record.addToRequestList(capture);
+                    record.addToRequestList(capture);
                     // }
                 }
             }
@@ -337,6 +453,7 @@ public class RequestResponseParser {
                     }
                 }
             }
+
             records.put(record.getMacID(), record);
         }
     }
@@ -344,5 +461,13 @@ public class RequestResponseParser {
     public static double calculateDistance(double levelInDb, double freqInMHz) {
         double exp = (-69.44 - (levelInDb)) / 20.0;
         return Math.pow(10.0, exp);
+    }
+
+    public static ArrayList<Capture> getCaptures() {
+        return captures;
+    }
+
+    public static HashMap<String, Record> getRecords() {
+        return records;
     }
 }

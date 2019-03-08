@@ -1,11 +1,17 @@
 package src;
 
+import com.lemmingapex.trilateration.NonLinearLeastSquaresSolver;
+import com.lemmingapex.trilateration.TrilaterationFunction;
+import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
+import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
+
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class CSVReader {
@@ -222,13 +228,35 @@ public class CSVReader {
         return Math.pow(10.0, exp);
     }
 
+    public static double[] getLocationByTrilateration2(List<Trilat> listOfBeacons) {
+        double[][] positions = new double[listOfBeacons.size()][2];
+        double[] distances = new double[listOfBeacons.size()];
+
+        for (int i = 0; i < listOfBeacons.size(); i++) {
+
+            positions[i][0] = listOfBeacons.get(i).getLatLng().getLatitude();
+            positions[i][1] = listOfBeacons.get(i).getLatLng().getLongitude();
+            distances[i] = listOfBeacons.get(i).getDistance();
+        }
+
+        NonLinearLeastSquaresSolver solver = new NonLinearLeastSquaresSolver(new TrilaterationFunction(positions, distances), new LevenbergMarquardtOptimizer());
+        LeastSquaresOptimizer.Optimum optimum = solver.solve();
+
+        double[] centroid = optimum.getPoint().toArray();
+
+
+        return centroid;
+
+    }
+
     public static LatLng getLocationByTrilateration(ArrayList<Trilat> trilat)
    /* (
             src.LatLng location1, double distance1,
             src.LatLng location2, double distance2,
             src.LatLng location3, double distance3) */ {
-//DECLARE VARIABLES
 
+//DECLARE VARIABLES
+        getLocationByTrilateration2(trilat);
         double[] P1 = new double[2];
         double[] P2 = new double[2];
         double[] P3 = new double[2];
@@ -261,17 +289,16 @@ public class CSVReader {
         distance1 = trilat.get(0).getDistance();
         distance2 = trilat.get(1).getDistance();
         distance3 = trilat.get(2).getDistance();
-
 //TRANSALTE POINTS TO VECTORS
 //POINT 1
-        P1[0] = location1.latitude;
-        P1[1] = location1.longitude;
+        P1[0] = location1.getLatitude();
+        P1[1] = location1.getLongitude();
 //POINT 2
-        P2[0] = location2.latitude;
-        P2[1] = location2.longitude;
+        P2[0] = location2.getLatitude();
+        P2[1] = location2.getLongitude();
 //POINT 3
-        P3[0] = location3.latitude;
-        P3[1] = location3.longitude;
+        P3[0] = location3.getLatitude();
+        P3[1] = location3.getLongitude();
 //TRANSFORM THE METERS VALUE FOR THE MAP UNIT
 //DISTANCE BETWEEN POINT 1 AND MY LOCATION
         distance1 = (distance1 / 100000);
@@ -324,15 +351,21 @@ public class CSVReader {
         }
         xval = (Math.pow(distance1, 2) - Math.pow(distance2, 2) + Math.pow(d, 2)) / (2 * d);
         yval = ((Math.pow(distance1, 2) - Math.pow(distance3, 2) + Math.pow(ival, 2) + Math.pow(jval, 2)) / (2 * jval)) - ((ival / jval) * xval);
-        t1 = location1.latitude;
+        t1 = location1.getLatitude();
         t2 = ex[0] * xval;
         t3 = ey[0] * yval;
         triptx = t1 + t2 + t3;
-        t1 = location1.longitude;
+        t1 = location1.getLongitude();
         t2 = ex[1] * xval;
         t3 = ey[1] * yval;
         tripty = t1 + t2 + t3;
-        return new LatLng(triptx, tripty);
+        if (!Double.isNaN(triptx) && !Double.isNaN(tripty)) {
+            return new LatLng(triptx, tripty);
+        } else {
+            System.out.println("vigyazz latlng 0 " + triptx + " " + tripty);
+            return new LatLng(0, 0);
+        }
+
     }
 
 

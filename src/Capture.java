@@ -47,7 +47,7 @@ public class Capture {
         Date date = null;
         if (!substring.equals("Time")) {
             try {
-                date = sdf.parse(substring);
+                date = sdf1.parse(substring);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -193,11 +193,20 @@ public class Capture {
                 '}';
     }
 
+
     public static class CaptureComparator implements Comparator<Capture> {
 
         @Override
         public int compare(Capture o1, Capture o2) {
             return o1.getSourceMAC().compareTo(o2.getSourceMAC());
+        }
+    }
+
+    public static class CaptureComparatorTime implements Comparator<Capture> {
+
+        @Override
+        public int compare(Capture o1, Capture o2) {
+            return o1.getTime().compareTo(o2.getTime());
         }
     }
 }
