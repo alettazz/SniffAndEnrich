@@ -228,25 +228,29 @@ public class CSVReader {
         return Math.pow(10.0, exp);
     }
 
-    public static double[] getLocationByTrilateration2(List<Trilat> listOfBeacons) {
-        double[][] positions = new double[listOfBeacons.size()][2];
-        double[] distances = new double[listOfBeacons.size()];
+    public static double[] getLocationByTrilateration2(List<Trilat> listOfTrilatDistances) {
+        listOfTrilatDistances.remove(2);
+        double[][] positions = new double[listOfTrilatDistances.size()][2];
+        double[] distances = new double[listOfTrilatDistances.size()];
 
-        for (int i = 0; i < listOfBeacons.size(); i++) {
-
-            positions[i][0] = listOfBeacons.get(i).getLatLng().getLatitude();
-            positions[i][1] = listOfBeacons.get(i).getLatLng().getLongitude();
-            distances[i] = listOfBeacons.get(i).getDistance();
+        for (int i = 0; i < listOfTrilatDistances.size(); i++) {
+            positions[i][0] = listOfTrilatDistances.get(i).getLatLng().getLatitude();
+            positions[i][1] = listOfTrilatDistances.get(i).getLatLng().getLongitude();
+            distances[i] = listOfTrilatDistances.get(i).getDistance();
         }
-
         NonLinearLeastSquaresSolver solver = new NonLinearLeastSquaresSolver(new TrilaterationFunction(positions, distances), new LevenbergMarquardtOptimizer());
         LeastSquaresOptimizer.Optimum optimum = solver.solve();
 
+
         double[] centroid = optimum.getPoint().toArray();
-
-
+        if (listOfTrilatDistances.size() == 2) {
+            //  centroid = checkIfInBuildingsRange(centroid);
+        }
         return centroid;
+    }
 
+    private static double[] checkIfInBuildingsRange(double[] centroid) {
+        return new double[0];
     }
 
     public static LatLng getLocationByTrilateration(ArrayList<Trilat> trilat)
