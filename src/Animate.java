@@ -1,14 +1,18 @@
 package src;
 
-import javafx.animation.PathTransition;
+import javafx.animation.*;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -20,20 +24,14 @@ import java.util.Random;
 public class Animate extends Application {
     private Group root = new Group();
     private int radius = 3;
+    private Timeline timeline;
+    private AnimationTimer animationTimer;
 
 
     public static void main(String[] args) {
 
         //processing the file from the parameter
-        RequestResponseParser.run("C:/Users/Aletta/Desktop/sniffngo/MERESEK/FinalCulomnizationCPY2.csv", "final_culomnization_out.csv", "final_culomnization_history.csv");
-
-
-       /* HistoryHolder.getInstance().addHistoryEntryToMac("ali", new LatLng(15, 15));
-        HistoryHolder.getInstance().addHistoryEntryToMac("belaa", new LatLng(35, 35));
-        HistoryHolder.getInstance().addHistoryEntryToMac("pittyhu", new LatLng(105, 95));
-
-        HistoryHolder.getInstance().addHistoryEntryToMac("ali", new LatLng(555, 95));
-        HistoryHolder.getInstance().addHistoryEntryToMac("ali", new LatLng(205, 300));*/
+        RequestResponseParser.run("C:/Users/Aletta/Desktop/sniffngo/MERESEK/FinalCulomnization.csv", "final_culomnization_out.csv", "final_culomnization_history.csv");
 
         launch();
     }
@@ -41,23 +39,42 @@ public class Animate extends Application {
     @Override
     public void start(Stage stage) {
         //Drawing a Circle
-        Scene scene = new Scene(root, 600, 300);
+        Scene scene = new Scene(root, 900, 500);
 
-        HashMap<String, ArrayList<LatLng>> history = HistoryHolder.getInstance().getHistory();
+        HashMap<String, ArrayList<LatLng>> history = HistoryHolder.getInstance().getHistoryMAP();
 
 
-        for (Map.Entry<String, ArrayList<LatLng>> stringLatLngEntry : history.entrySet()) {
+        for (final Map.Entry<String, ArrayList<LatLng>> stringLatLngEntry : history.entrySet()) {
 
+
+            for (LatLng latLng : stringLatLngEntry.getValue()) {
+                System.out.println(stringLatLngEntry.getKey() + " " +  latLng.getDate());
+
+            }
 
             ArrayList<LatLng> value = stringLatLngEntry.getValue();
-            if (value.size() > 2) {
+            if (value.size() == 2) {
+                radius = 2;
+            } else if (value.size() > 3 && value.size() < 5) {
+                radius = 5;
+            } else if (value.size() >= 5) {
                 radius = 10;
-            } else if (value.size() > 5) {
-                radius = 15;
             }
 
 
             Circle circle = new Circle(radius, new Color(new Random(255).nextFloat(), 0, new Random(255).nextFloat(), 0.6));
+            final Text text = new Text(stringLatLngEntry.getKey());
+            text.setStroke(Color.BLACK);
+            //create a layout for circle with text inside
+            final StackPane stack = new StackPane();
+            stack.getChildren().addAll(circle, text);
+            stack.setLayoutX(value.get(0).getLatitude());
+            stack.setLayoutY(value.get(0).getLongitude());
+            root.getChildren().add(stack);
+
+            timeline = new Timeline();
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.setAutoReverse(true);
 
 
             //setting the given history list
@@ -69,10 +86,6 @@ public class Animate extends Application {
             //Setting the radius of the circle
             circle.setRadius(8.30f);
 
-            //  Color color = getColor();
-            // System.out.println("SZIN "+color.toString());
-            //circle.setFill(color);
-
             circle.setStrokeWidth(2);
             circle.setStroke(new Color(0, 0, 0.9, 0.8));
 
@@ -82,7 +95,7 @@ public class Animate extends Application {
             MoveTo moveTo = new MoveTo(value.get(0).getLatitude(), value.get(0).getLongitude());
 
             circle.setRadius(radius);
-            System.out.println(" kor " + stringLatLngEntry.getKey() + " " + value.get(0).getLongitude() + " " + value.get(0).getLatitude() + " " + radius);
+            //  System.out.println(" kor " + stringLatLngEntry.getKey() + " " + value.get(0).getLongitude() + " " + value.get(0).getLatitude() + " " + radius);
 
             //Adding all the elements to the path
             path.getElements().add(moveTo);
@@ -91,31 +104,56 @@ public class Animate extends Application {
             int counter = 1;
 
             while (i > 1) {
-                path.getElements().addAll(new LineTo(value.get(counter).getLatitude() * 4, value.get(counter).getLongitude() * 4));
+                path.getElements().addAll(new LineTo(value.get(counter).getLatitude() * 10, value.get(counter).getLongitude() * 10));
                 i--;
-                System.out.println(value.size() + " " + counter + " n " + value.get(counter).toString());
+                //    System.out.println(value.size() + " " + counter + " n " + value.get(counter).toString());
                 counter++;
             }
 
             PathTransition pathTransition = new PathTransition();
 
-            pathTransition.setDuration(Duration.millis(8000));
+            pathTransition.setDuration(Duration.millis(28000));
 
-            pathTransition.setNode(circle);
+            pathTransition.setNode(stack);
 
             //Setting the path for the transition
             pathTransition.setPath(path);
-
-
-            //Setting the cycle count for the transition
-            // pathTransition.setCycleCount(50);
 
             pathTransition.setAutoReverse(true);
 
             pathTransition.play();
 
-            root.getChildren().add(circle);
+            animationTimer = new AnimationTimer() {
+                @Override
+                public void handle(long l) {
+                    //   text.setText(i.toString());
+                    // i++;
+                }
+            };
 
+            KeyValue keyValueX = new KeyValue(stack.scaleXProperty(), 1);
+            KeyValue keyValueY = new KeyValue(stack.scaleYProperty(), 1);
+
+            //create a keyFrame, the keyValue is reached at time 2s
+            Duration duration = Duration.millis(2000);
+            //one can add a specific action when the keyframe is reached
+            EventHandler onFinished = new EventHandler<ActionEvent>() {
+                public void handle(ActionEvent t) {
+                    for (LatLng latLng : stringLatLngEntry.getValue()) {
+                        latLng.getDate();
+                    }
+                    //  stack.setTranslateX(java.lang.Math.random()*200-100);
+                    //reset counter
+                }
+            };
+
+            KeyFrame keyFrame = new KeyFrame(duration, onFinished, keyValueX, keyValueY);
+
+            //add the keyframe to the timeline
+            timeline.getKeyFrames().add(keyFrame);
+
+            timeline.play();
+            animationTimer.start();
             stage.setTitle("MAC");
 
         }

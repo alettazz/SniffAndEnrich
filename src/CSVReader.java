@@ -229,7 +229,7 @@ public class CSVReader {
     }
 
     public static double[] getLocationByTrilateration2(List<Trilat> listOfTrilatDistances) {
-        listOfTrilatDistances.remove(2);
+     //   listOfTrilatDistances.remove(2);
         double[][] positions = new double[listOfTrilatDistances.size()][2];
         double[] distances = new double[listOfTrilatDistances.size()];
 

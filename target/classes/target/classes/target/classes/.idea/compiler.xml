@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DatabaseCleaner" target="1.7" />
+      <module name="DatabaseCleaner" target="8" />
       <module name="parsermaven" target="7" />
     </bytecodeTargetLevel>
   </component>
