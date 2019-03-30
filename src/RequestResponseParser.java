@@ -19,6 +19,7 @@ public class RequestResponseParser {
     private static HashMap<String, LatLng> history = new HashMap<>();
     private static String historyFile;
     private static String outputFile;
+    private static Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
 
     public static void run(String csvFile, String output, String historyFileParam) {
 
@@ -113,24 +114,49 @@ public class RequestResponseParser {
 
             String key = stringArrayListEntry.getKey();
             for (LatLng latLng : stringArrayListEntry.getValue()) {
-                sb = new StringBuilder();
-                sb.append("\n");
-                sb.append(key);
-                sb.append(",");
-                sb.append(matchMACtoVendor(key));
-                sb.append(",");
-                sb.append(latLng.getDate());
-                sb.append(",");
-                sb.append(latLng.getLatitude());
-                sb.append(",");
-                sb.append(latLng.getLongitude());
-                sb.append(",");
-                pw2.write(sb.toString());
+
+                if (latLng.getLatitude() > 46 && latLng.getLatitude() < 47 && latLng.getLongitude() < 25 && latLng.getLongitude() > 24) {
+
+                    calendar.setTime(latLng.getDate());
+                    int hour = calendar.get(Calendar.HOUR_OF_DAY);// gets hour in 24h format
+                    int minute = calendar.get(Calendar.MINUTE);// gets hour in 24h format
+                    int second = calendar.get(Calendar.SECOND);// gets hour in 24h format
+
+                    String properDate = buildTime(hour, minute, second);
+                    Date date = new Date(properDate);
+
+                    sb = new StringBuilder();
+                    sb.append("\n");
+                    sb.append(key);
+                    sb.append(",");
+                    sb.append(matchMACtoVendor(key));
+                    sb.append(",");
+                    sb.append(date.getTime());
+                    sb.append(",");
+                    sb.append(latLng.getLatitude());
+                    sb.append(",");
+                    sb.append(latLng.getLongitude());
+                    sb.append(",");
+                    pw2.write(sb.toString());
+                }
             }
         }
+    }
 
+    private static String buildTime(int hour, int minute, int second) {
+        Calendar currentCalendar = GregorianCalendar.getInstance();
+        // Date date = new Date(System.currentTimeMillis());
+        //currentCalendar.setTime(date);
 
-        System.out.println("Ezt irja az allomanyba " + sb.toString());
+        currentCalendar.set(2019, Calendar.FEBRUARY, 26, hour - 12, minute, second);
+        currentCalendar.set(Calendar.MONTH, Calendar.FEBRUARY);
+        String format;
+        format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(currentCalendar.getTime());
+        if (currentCalendar.get(Calendar.MONTH) != Calendar.FEBRUARY) {
+            System.out.println("stpeed " + currentCalendar.get(Calendar.MONTH));
+
+        }
+        return format;
     }
 
     private static void createHistory() {
@@ -167,7 +193,6 @@ public class RequestResponseParser {
 
                             checkWlan = value.getResponses().get(i - 1).getWlanSSID();
                         }
-                        // i--;
 
                     }
                     if (toTrilat.size() >= 3) {
@@ -183,21 +208,22 @@ public class RequestResponseParser {
 
     private static boolean checkProperWlan(String wlanSSID) {
         return wlanSSID.equals("Internet") || wlanSSID.equals("Internet5Ga") || wlanSSID.equals("Internet5Gb") || wlanSSID.equals("Internet5Gc") ||
-                wlanSSID.equals("Internet5G") || wlanSSID.equals("Emikroszkop") || wlanSSID.equals("Pince2");
+                wlanSSID.equals("Internet5G") /*|| wlanSSID.equals("Emikroszkop") || wlanSSID.equals("Pince2")*/;
     }
 
     private static void writeHistory(String key, Date timeToCheck, ArrayList<Capture> toTrilat) {
 
         ArrayList<Trilat> trilat = new ArrayList<Trilat>();
         for (Capture capture : toTrilat) {
-            trilat.add(new Trilat(matchLocationSSID(capture.getWlanSSID()), calculateDistance(Double.parseDouble(capture.getRssi().substring(0, 3)), 2.4)));
+            trilat.add(new Trilat(matchLocationSSID(capture.getWlanSSID()), calculateDistance(Double.parseDouble(capture.getRssi().substring(0, 3)))));
         }
         LatLng locationByTrilateration;
-        double[] locationByTrilaterationRes = CSVReader.getLocationByTrilateration2(trilat);
+        double[] locationByTrilaterationRes2 = CSVReader.getLocationByTrilateration2(trilat);
+        LatLng locationByTrilaterationRes = CSVReader.getLocationByTrilateration(trilat);
 
         Date historyTime = getCurrentElementTime(toTrilat);
 
-        locationByTrilateration = new LatLng(locationByTrilaterationRes[0], locationByTrilaterationRes[1], timeToCheck);
+        locationByTrilateration = new LatLng(locationByTrilaterationRes.getLatitude(), locationByTrilaterationRes.getLongitude(), timeToCheck);
 
         if (locationByTrilateration.getLongitude() != 0 && locationByTrilateration.getLatitude() != 0 && historyTime != null) {
             //adding the entry to the local history database
@@ -228,22 +254,16 @@ public class RequestResponseParser {
         String csvFile = "C:/Users/Aletta/Desktop/sniffngo/vendorMacs.csv";
         String line = "";
         String cvsSplitBy = ",";
-        macVendors = new HashMap<>();
-
+        macVendors = new HashMap<String, String>();
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
             while ((line = br.readLine()) != null) {
-
                 String[] split = line.split(cvsSplitBy);
                 Vendor vendor = new Vendor(split[0], split[1]);
-                //  System.out.println(vendor.getMacPreffix() + " " + vendor.getVendor());
                 macVendors.put(vendor.getMacPreffix(), vendor.getVendor());
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private static void initFile() {
@@ -289,16 +309,16 @@ public class RequestResponseParser {
         LatLng latlng = new LatLng(0, 0, new Date());
         switch (SSID) {
             case "Internet":
-                latlng = new LatLng(46.522, 24.598, new Date());
+                latlng = new LatLng(46.522929, 24.598748, new Date());
                 break;
             case "Internet5G":
                 latlng = new LatLng(46.555, 24.601, new Date());
                 break;
             case "Internet5Ga":
-                latlng = new LatLng(46.543, 24.600, new Date());
+                latlng = new LatLng(46.522743, 24.598609, new Date());
                 break;
             case "Internet5Gb":
-                latlng = new LatLng(46.533, 24.590, new Date());
+                latlng = new LatLng(46.523024, 24.598556, new Date());
                 break;
             case "SapiPark":
                 latlng = new LatLng(46.602, 24.598, new Date());
@@ -310,7 +330,7 @@ public class RequestResponseParser {
                 latlng = new LatLng(46.523044, 24.598436, new Date());
                 break;
             case "Internet5Gc":
-                latlng = new LatLng(46.5059101, 24.6196315, new Date());
+                latlng = new LatLng(46.523038, 24.598767, new Date());
                 break;
         }
         return latlng;
@@ -350,10 +370,10 @@ public class RequestResponseParser {
                 if (request.getDestinationMAC().equals(BROADCAST)) {
                     timeToCheck = request.getTime();
 
-                    if (request.getWlanSSID().equals("Emikroszkop") || request.getWlanSSID().equals("Internet") || request.getWlanSSID().equals("Internet5G") || request.getWlanSSID().equals("Internet5Ga") || request.getWlanSSID().equals("Internet5Gb") || request.getWlanSSID().equals("Internet5Gc")) {
+                    if (/*request.getWlanSSID().equals("Emikroszkop") ||*/ request.getWlanSSID().equals("Internet") || request.getWlanSSID().equals("Internet5G") || request.getWlanSSID().equals("Internet5Ga") || request.getWlanSSID().equals("Internet5Gb") || request.getWlanSSID().equals("Internet5Gc")) {
                         //check the broadcasted ssid is one of the known from infrastructure
 
-                        mapRSSIDistance.put(request.getWlanSSID(), calculateDistance(Double.parseDouble(request.getRssi().substring(0, 2)), 2.4));
+                        mapRSSIDistance.put(request.getWlanSSID(), calculateDistance(Double.parseDouble(request.getRssi().substring(0, 2))));
                     }
                 }
 
@@ -361,10 +381,10 @@ public class RequestResponseParser {
                 ArrayList<Capture> filteredResponses = new ArrayList<>();
                 for (Capture respons : value.getResponses()) {
                     if (respons.getTime().equals(timeToCheck)) {//plus min
-                        if (respons.getWlanSSID().equals("Emikroszkop") || respons.getWlanSSID().equals("Internet") || respons.getWlanSSID().equals("Internet5G") || respons.getWlanSSID().equals("Internet5Ga") || respons.getWlanSSID().equals("Internet5Gb") || respons.getWlanSSID().equals("Internet5Gc")) {
+                        if (/*respons.getWlanSSID().equals("Emikroszkop") ||*/ respons.getWlanSSID().equals("Internet") || respons.getWlanSSID().equals("Internet5G") || respons.getWlanSSID().equals("Internet5Ga") || respons.getWlanSSID().equals("Internet5Gb") || respons.getWlanSSID().equals("Internet5Gc")) {
                             // || respons.getWlanSSID().equals("Internet5Gc") is optional please check the file that has to be processed
                             filteredResponses.add(respons);
-                            mapRSSIDistance.put(respons.getWlanSSID(), calculateDistance(Double.parseDouble(respons.getRssi().substring(0, 2)), 2.4));
+                            mapRSSIDistance.put(respons.getWlanSSID(), calculateDistance(Double.parseDouble(respons.getRssi().substring(0, 2))));
                         }
 
                     }
@@ -486,9 +506,19 @@ public class RequestResponseParser {
         }
     }
 
-    public static double calculateDistance(double levelInDb, double freqInMHz) {
-        double exp = (-69.44 - (levelInDb)) / 20.0;
-        return Math.pow(10.0, exp);
+    public static double calculateDistance(double rssi) {
+        double txPower = -59;//hard coded power value. Usually ranges between -59 to -65
+
+        if (rssi == 0) {
+            return -1.0;
+        }
+
+        double ratio = rssi * 1.0 / txPower;
+        if (ratio < 1.0) {
+            return Math.pow(ratio, 10);
+        } else {
+            return (0.89976) * Math.pow(ratio, 7.7095) + 0.111;
+        }
     }
 
     public static ArrayList<Capture> getCaptures() {

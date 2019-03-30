@@ -13,6 +13,8 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextBoundsType;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -31,7 +33,7 @@ public class Animate extends Application {
     public static void main(String[] args) {
 
         //processing the file from the parameter
-        RequestResponseParser.run("C:/Users/Aletta/Desktop/sniffngo/MERESEK/FinalCulomnization.csv", "final_culomnization_out.csv", "final_culomnization_history.csv");
+        RequestResponseParser.run("C:/Users/Aletta/Desktop/sniffngo/MERESEK/febr26/febr26.csv", "final_culomnization_out.csv", "februar26HistoryStringTimestmp.csv");
 
         launch();
     }
@@ -65,11 +67,15 @@ public class Animate extends Application {
             Circle circle = new Circle(radius, new Color(new Random(255).nextFloat(), 0, new Random(255).nextFloat(), 0.6));
             final Text text = new Text(stringLatLngEntry.getKey());
             text.setStroke(Color.BLACK);
+            text.setTextAlignment(TextAlignment.CENTER);
+            text.setBoundsType(TextBoundsType.LOGICAL_VERTICAL_CENTER);
+
             //create a layout for circle with text inside
             final StackPane stack = new StackPane();
             stack.getChildren().addAll(circle, text);
-            stack.setLayoutX(value.get(0).getLatitude());
-            stack.setLayoutY(value.get(0).getLongitude());
+            stack.setLayoutX(value.get(0).getLatitude() + 5);
+            stack.setLayoutY(value.get(0).getLongitude() + 5);
+
             root.getChildren().add(stack);
 
             timeline = new Timeline();
@@ -84,10 +90,12 @@ public class Animate extends Application {
             circle.setCenterY(value.get(0).getLongitude());
 
             //Setting the radius of the circle
-            circle.setRadius(8.30f);
 
-            circle.setStrokeWidth(2);
-            circle.setStroke(new Color(0, 0, 0.9, 0.8));
+            circle.setStrokeWidth(9);
+            for (int i = 0; i < value.size(); i++) {
+                circle.setStroke(new Color(value.get(i).getTimestamp() % 255 / 1000, 0, value.get(i).getTimestamp() % 255 / 1000, 0.8));
+
+            }
 
             //Creating a Path
             Path path = new Path();

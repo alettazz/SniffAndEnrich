@@ -67,4 +67,10 @@ public class Record {
     public ArrayList<Capture> getResponses() {
         return responses;
     }
+
+    public void resetUsed() {
+        for (Capture respons : responses) {
+            respons.setUsed(false);
+        }
+    }
 }

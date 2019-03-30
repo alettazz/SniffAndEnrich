@@ -21,7 +21,9 @@ public class Capture {
     private String dataRate;
     private String deviceName; //source
     private String deviceTypeCategory; //smartphone
-
+    private boolean used;
+    private int minute;
+    private int hour;
 
     public Capture(String id, String time, String sourceMAC, String destinationMAC, String protocol, String rssi, String deltaTime, String captureType, String sourceManufacturer, String sourceModel, String sourceType, String wlanSSID, String dataRate, String deviceName, String deviceTypeCategory) {
         this.id = id.substring(1, id.length() - 1);
@@ -47,7 +49,9 @@ public class Capture {
         Date date = null;
         if (!substring.equals("Time")) {
             try {
-                date = sdf1.parse(substring);
+                date = sdf.parse(substring);
+
+
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -73,6 +77,14 @@ public class Capture {
 
     public Date getTime() {
         return time;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public int getHour() {
+        return hour;
     }
 
     public String getSourceMAC() {
@@ -191,6 +203,14 @@ public class Capture {
                 ", deviceName='" + deviceName + '\'' +
                 ", deviceTypeCategory='" + deviceTypeCategory + '\'' +
                 '}';
+    }
+
+    public boolean isUsed() {
+        return this.used;
+    }
+
+    public void setUsed(boolean b) {
+        used = b;
     }
 
 
