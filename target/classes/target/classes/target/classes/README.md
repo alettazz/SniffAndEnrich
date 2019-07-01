@@ -16,7 +16,7 @@ Main script of sniffing been changed
  - creates records for all distinct mac addresses
  - matches probes and responses to a mac addresses connection activity
  - based on the known AP LatLngs calculates using Trilateration the physical position of a mac address beholder in the minute of probing
- - lists location currently only on system output
+ - creates history for each mac address with the previously visited places and animates them
 
 # SniffAndEnrich
 
