@@ -3,6 +3,7 @@ package src.helper;
 import src.models.LatLng;
 
 public class LocationHelper {
+    //since input data has been bettered with heatmap and trilateration modul this was used only at the beginning
     public static LatLng calculateIntersection(int x0, int y0, int x1, int y1, int r0, int r1) {
         double d;
         d = Math.sqrt(((x1 - x0) ^ 2 + (y1 - y0) ^ 2));

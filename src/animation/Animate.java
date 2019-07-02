@@ -37,7 +37,7 @@ public class Animate extends Application {
     public static void main(String[] args) {
 
         //processing the file from the parameter
-        RequestResponseParser.run("/Users/alettatordai/IdeaProjects/SniffAndEnrich/input/febr26.csv", "/Users/alettatordai/IdeaProjects/SniffAndEnrich/out/febr27.csv", "/Users/alettatordai/IdeaProjects/SniffAndEnrich/out/HistoryStringTimestmp_febr27.csv");
+        RequestResponseParser.run("/Users/alettatordai/IdeaProjects/SniffAndEnrich/input/capture_febr_26.csv", "/Users/alettatordai/IdeaProjects/SniffAndEnrich/out/history_febr_26.csv", "/Users/alettatordai/IdeaProjects/SniffAndEnrich/out/HistoryStringTimestmp_febr26.csv");
 
         launch();
     }
@@ -47,7 +47,7 @@ public class Animate extends Application {
         //Drawing a Circle
         Scene scene = new Scene(root, 900, 500);
 
-        HashMap<String, ArrayList<LatLng>> history = HistoryHolder.getInstance().getHistoryMAP();
+        HashMap<String, ArrayList<LatLng>> history = HistoryHolder.getInstance().getHistory();
 
 
         for (final Map.Entry<String, ArrayList<LatLng>> stringLatLngEntry : history.entrySet()) {
@@ -107,7 +107,6 @@ public class Animate extends Application {
             MoveTo moveTo = new MoveTo(value.get(0).getLatitude(), value.get(0).getLongitude());
 
             circle.setRadius(radius);
-            //  System.out.println(" kor " + stringLatLngEntry.getKey() + " " + value.get(0).getLongitude() + " " + value.get(0).getLatitude() + " " + radius);
 
             //Adding all the elements to the path
             path.getElements().add(moveTo);
@@ -116,9 +115,8 @@ public class Animate extends Application {
             int counter = 1;
 
             while (i > 1) {
-                path.getElements().addAll(new LineTo(value.get(counter).getLatitude() * 10, value.get(counter).getLongitude() * 10));
+                path.getElements().addAll(new LineTo(value.get(counter).getLatitude() * 25, value.get(counter).getLongitude() * 25));
                 i--;
-                //    System.out.println(value.size() + " " + counter + " n " + value.get(counter).toString());
                 counter++;
             }
 
@@ -135,13 +133,6 @@ public class Animate extends Application {
 
             pathTransition.play();
 
-            animationTimer = new AnimationTimer() {
-                @Override
-                public void handle(long l) {
-                    //   text.setText(i.toString());
-                    // i++;
-                }
-            };
 
             KeyValue keyValueX = new KeyValue(stack.scaleXProperty(), 1);
             KeyValue keyValueY = new KeyValue(stack.scaleYProperty(), 1);
@@ -154,7 +145,7 @@ public class Animate extends Application {
                     for (LatLng latLng : stringLatLngEntry.getValue()) {
                         latLng.getDate();
                     }
-                    //  stack.setTranslateX(java.lang.Math.random()*200-100);
+                    stack.setTranslateX(java.lang.Math.random() * 200 - 100);
                     //reset counter
                 }
             };
@@ -173,9 +164,5 @@ public class Animate extends Application {
         stage.show();
     }
 
-    private Color getColor() {
-
-        return new Color(new Random(255).nextFloat(), new Random(255).nextFloat(), new Random(255).nextFloat(), 0.6);
-    }
 }
 

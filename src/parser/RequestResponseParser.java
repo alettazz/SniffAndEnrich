@@ -16,6 +16,7 @@ public class RequestResponseParser {
     private static ArrayList<Capture> captures;
     private static int counter = 1;
     private static StringBuilder sb;
+    private static LatLng previous = new LatLng(0, 0);
     private static PrintWriter pw = null;
     private static HashMap<String, Record> records = new HashMap<String, Record>();
     private static ArrayList<String> strangers = new ArrayList<>();
@@ -44,8 +45,7 @@ public class RequestResponseParser {
             while ((line = br.readLine()) != null) {
 
                 String[] split = line.split(cvsSplitBy);
-                //note: depending on input file captures may differ in timeformat
-                // Capture capture_type = new Capture(split[0], split[1], split[2], split[3], split[4], split[5], split[6], split[7], split[8], split[9], split[10], split[11], split[12], split[13], split[14]);
+                //note: depending on input file captures may differ in timeformat and delimiter!
                 if (split.length > MINIMUM_CAPTURE_SIZE) {
                     Capture capture = new Capture(split[0], split[1], split[2], split[3], split[4], split[5], split[6], split[7], split[8], split[9], split[10], split[11]);
                     captures.add(capture);
@@ -158,12 +158,13 @@ public class RequestResponseParser {
 
     private static void writeHistoryToFile() {
 
-        // HistoryHolder.getInstance().cleanHistoryFromDuplicateEntries();
+        HistoryHolder.getInstance().cleanHistoryFromDuplicateEntries();
         for (Map.Entry<String, ArrayList<LatLng>> stringArrayListEntry : HistoryHolder.getInstance().getHistory().entrySet()) {
 
             String key = stringArrayListEntry.getKey();
             for (LatLng latLng : stringArrayListEntry.getValue()) {
 
+                //checkIfInBuildingsRange
                 if (latLng.getLatitude() > 46 && latLng.getLatitude() < 47 && latLng.getLongitude() < 25 && latLng.getLongitude() > 24) {
 
                     calendar.setTime(latLng.getDate());
@@ -235,15 +236,13 @@ public class RequestResponseParser {
 
                     if (!dateToCheck.before(startDate) && !dateToCheck.after(endDate)) {
 
-                        //  System.out.println(startDate.toString() + " " + endDate.toString());
-
                         if (!checkWlan.equals(value.getResponses().get(i).getWlanSSID()) && checkProperWlan(value.getResponses().get(i).getWlanSSID())) {
                             toTrilat.add(value.getResponses().get(i));
                             value.getResponses().remove(i);
                         }
 
                         if (!value.getResponses().isEmpty() && i > 0 && value.getResponses().size() > i) {
-
+                            toTrilat.add(value.getResponses().get(i - 1));
                             checkWlan = value.getResponses().get(i - 1).getWlanSSID();
                         }
 
@@ -261,7 +260,7 @@ public class RequestResponseParser {
 
     private static boolean checkProperWlan(String wlanSSID) {
         return wlanSSID.equals("Internet") || wlanSSID.equals("Internet5Ga") || wlanSSID.equals("Internet5Gb") || wlanSSID.equals("Internet5Gc") ||
-                wlanSSID.equals("Internet5G") /*|| wlanSSID.equals("Emikroszkop") || wlanSSID.equals("Pince2")*/;
+                wlanSSID.equals("Internet5G") /* || wlanSSID.equals("Pince2")*/;
     }
 
 
@@ -279,16 +278,16 @@ public class RequestResponseParser {
 
         Date historyTime = getCurrentElementTime(toTrilat);
 
-        locationByTrilateration = new LatLng(locationByTrilaterationRes[0], locationByTrilaterationRes[1], timeToCheck);
-
+        //the old way of retrieving location with trilateration
         locationByTrilateration = new LatLng(locationByTrilaterationRes2.getLatitude(), locationByTrilaterationRes2.getLongitude(), timeToCheck);
+
+        //heatmap values used for trilateration
+        locationByTrilateration = new LatLng(locationByTrilaterationRes[0], locationByTrilaterationRes[1], timeToCheck);
 
         if (locationByTrilateration.getLongitude() != 0 && locationByTrilateration.getLatitude() != 0 && historyTime != null) {
 
             //adding the entry to the local history database
             HistoryHolder.getInstance().addHistoryEntryToMac(key, locationByTrilateration);
-
-            System.out.println("Ezt irja az allomanyba " + sb.toString());
 
             history.put(key, locationByTrilateration);
 
@@ -474,6 +473,7 @@ public class RequestResponseParser {
             trilat.add(new Trilat(matchLocationSSID(stringDoubleEntry.getKey()), stringDoubleEntry.getValue(), rssiValue));
 
         }
+
         if (mapRSSIDistance.entrySet().size() >= 3) {
 
             System.out.println("trilat");
@@ -486,7 +486,12 @@ public class RequestResponseParser {
             records.get(key).setLatLng(locationByTrilateration);
             records.get(key).setVendor(matchMACtoVendor(key));
             System.out.println(counter + " MAC address: " + key + " at time of: " + timeToCheck + " was at:   " + locationByTrilateration.getLatitude() + " " + locationByTrilateration.getLongitude() + "   being connected to " + mapRSSIDistance.keySet().toString() + " having a device of " + records.get(key).getVendor());
-            writeCSV(counter, key, new Date(), mapRSSIDistance.keySet().toArray(), mapRSSIDistance.values().toArray(), locationByTrilateration, records.get(key).getVendor());
+            if (previous != locationByTrilateration) {
+
+                writeCSV(counter, key, new Date(), mapRSSIDistance.keySet().toArray(), mapRSSIDistance.values().toArray(), locationByTrilateration, records.get(key).getVendor());
+            } else {
+                previous = locationByTrilateration;
+            }
 
         }
 

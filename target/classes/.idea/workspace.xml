@@ -2,55 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b33eb9a1-fcee-4b6f-936e-70cae0f6e3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/heatmap_1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/capture_febr_27_2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/febr26.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendorMacs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseCleaner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseCleaner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/Animate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/CSVReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Capture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Capture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HistoryHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/HistoryHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LatLng.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/LatLng.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/LocationHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lookup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/Lookup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Probe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Probe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProbeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ProbeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RequestResponseParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/RequestResponseParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trilat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Trilat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Vendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/capture_febr_27_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/febr26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/input/capture_febr_26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/HistoryStringTimestmp_febr26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/HistoryStringTimestmp_febr26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/HistoryStringTimestmp_febr27.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/febr26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/febr27.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animation/Animate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/Animate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/LocationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/LocationHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/CSVReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/RequestResponseParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/RequestResponseParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DatabaseCleaner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DatabaseCleaner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/final_culomnization_history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/final_culomnization_history.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HistoryStringTimestmp_febr26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HistoryStringTimestmp_febr26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/februar26HistoryStringTimestmp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/februar26HistoryStringTimestmp.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/final_culomnization_out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/final_culomnization_out.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Animate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/CSVReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Capture$CaptureComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Capture$CaptureComparatorTime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Capture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/HistoryHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/LatLng.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/LocationHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Lookup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Probe$ProbeComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Probe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/ProbeActivity$ProbeActivityComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/ProbeActivity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Record.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/RequestResponseParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Trilat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/Vendor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/DatabaseCleaner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/DatabaseCleaner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/DatabaseCleaner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/DatabaseCleaner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/input/capture_febr_27_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/input/febr26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/out/HistoryStringTimestmp_febr26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/out/HistoryStringTimestmp_febr26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/out/HistoryStringTimestmp_febr27.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/out/febr26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/out/febr27.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/animation/Animate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/animation/Animate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/models/Trilat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/models/Trilat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/parser/CSVReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/parser/CSVReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/parser/RequestResponseParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/parser/RequestResponseParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/HistoryStringTimestmp_febr26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/HistoryStringTimestmp_febr26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/februar26HistoryStringTimestmp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/februar26HistoryStringTimestmp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/final_culomnization_out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/final_culomnization_out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/input/capture_febr_27_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/input/febr26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/HistoryStringTimestmp_febr26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/HistoryStringTimestmp_febr26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/februar26HistoryStringTimestmp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/februar26HistoryStringTimestmp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/final_culomnization_out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/final_culomnization_out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/input/capture_febr_27_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/input/febr26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/HistoryStringTimestmp_febr26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/HistoryStringTimestmp_febr26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/februar26HistoryStringTimestmp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/februar26HistoryStringTimestmp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/final_culomnization_out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/final_culomnization_out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/input/capture_febr_27_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/input/febr26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/februar26HistoryStringTimestmp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/februar26HistoryStringTimestmp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/final_culomnization_out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/final_culomnization_out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/input/capture_febr_27_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/input/febr26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/vendorMacs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/vendorMacs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/target/classes/vendorMacs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/vendorMacs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/vendorMacs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vendorMacs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vendorMacs.csv" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/parsermaven/target/" />
@@ -72,26 +74,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/parser/RequestResponseParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="296" selection-start-line="296" selection-end-line="296" />
+            <state relative-caret-position="2833">
+              <caret line="262" column="48" selection-start-line="262" selection-start-column="48" selection-end-line="262" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#writeHistoryToFile#0;class#RequestResponseParser#0" />
+                <element signature="method#initHeatmap#0;class#RequestResponseParser#0" />
+                <element signature="method#initHistoryFile#0;class#RequestResponseParser#0" />
                 <element signature="method#buildTime#0;class#RequestResponseParser#0" />
-                <element signature="method#createHistory#0;class#RequestResponseParser#0" />
                 <element signature="method#getCurrentElementTime#0;class#RequestResponseParser#0" />
                 <element signature="method#initOUI#0;class#RequestResponseParser#0" />
                 <element signature="method#initFile#0;class#RequestResponseParser#0" />
                 <element signature="method#matchLocationSSID#0;class#RequestResponseParser#0" />
                 <element signature="method#matchMACtoVendor#0;class#RequestResponseParser#0" />
                 <element signature="method#sortbykey#0;class#RequestResponseParser#0" />
-                <element signature="method#writeCSV#0;class#RequestResponseParser#0" />
                 <element signature="method#createRecords#0;class#RequestResponseParser#0" />
                 <element signature="method#calculateDistance#0;class#RequestResponseParser#0" />
-                <element signature="e#20216#20248#1" />
-                <element signature="e#21704#21705#0" expanded="true" />
-                <element signature="e#20305#20336#1" />
-                <element signature="e#21792#21793#0" expanded="true" />
+                <element signature="e#21804#21805#0" expanded="true" />
+                <element signature="e#21835#21836#0" expanded="true" />
+                <element signature="e#21903#21904#0" expanded="true" />
+                <element signature="e#21937#21938#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,59 +101,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/Capture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/CSVReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="268" selection-start-line="268" selection-end-line="268" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getLocationByTrilateration#0;class#CSVReader#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/Trilat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="93">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/heatmap_1.csv">
-          <provider selected="true" editor-type-id="csv-text-editor" />
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/LatLng.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/animation/Animate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="39" column="100" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="100" />
+            <state relative-caret-position="205">
+              <caret line="117" column="130" selection-start-line="117" selection-start-column="130" selection-end-line="117" selection-end-column="130" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -174,22 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>88:11:96:e6:a0:2</find>
-      <find>text</find>
-      <find>set</find>
-      <find>37.</find>
-      <find>,,</find>
-      <find>46.5</find>
-      <find>initou</find>
-      <find>oui</find>
-      <find>init</find>
-      <find>emi</find>
-      <find>pinc</find>
-      <find>calc</find>
-      <find>pinp</find>
-      <find>46.25</find>
-      <find>time</find>
-      <find>Date</find>
       <find>Date(</find>
       <find>GregorianCalendar</find>
       <find>system.out</find>
@@ -204,6 +147,22 @@
       <find>vendorm</find>
       <find>-1</find>
       <find>vendormƒ</find>
+      <find>pinp</find>
+      <find>histo</find>
+      <find>parsed</find>
+      <find>dupl</find>
+      <find>pw2</find>
+      <find>pw2.w</find>
+      <find>ezt</find>
+      <find>writec</find>
+      <find>i-1</find>
+      <find>dup</find>
+      <find>csv</find>
+      <find>52289339234296</find>
+      <find>vigy</find>
+      <find>i-</find>
+      <find>calculateDistance</find>
+      <find>&lt; 46</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -265,12 +224,14 @@
         <option value="$PROJECT_DIR$/src/models/ProbeActivity.java" />
         <option value="$PROJECT_DIR$/src/models/Probe.java" />
         <option value="$PROJECT_DIR$/capture_febr_27_2.csv" />
-        <option value="$PROJECT_DIR$/src/models/Capture.java" />
-        <option value="$PROJECT_DIR$/src/animation/Animate.java" />
-        <option value="$PROJECT_DIR$/src/models/Trilat.java" />
-        <option value="$PROJECT_DIR$/src/parser/RequestResponseParser.java" />
-        <option value="$PROJECT_DIR$/src/parser/CSVReader.java" />
         <option value="$PROJECT_DIR$/heatmap_1.csv" />
+        <option value="$PROJECT_DIR$/src/models/Trilat.java" />
+        <option value="$PROJECT_DIR$/out/HistoryStringTimestmp_febr27.csv" />
+        <option value="$PROJECT_DIR$/src/models/Capture.java" />
+        <option value="$PROJECT_DIR$/src/parser/CSVReader.java" />
+        <option value="$PROJECT_DIR$/src/parser/RequestResponseParser.java" />
+        <option value="$PROJECT_DIR$/src/helper/LocationHelper.java" />
+        <option value="$PROJECT_DIR$/src/animation/Animate.java" />
       </list>
     </option>
   </component>
@@ -285,7 +246,7 @@
     <option name="x" value="-8" />
     <option name="y" value="23" />
     <option name="width" value="1612" />
-    <option name="height" value="705" />
+    <option name="height" value="710" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -293,28 +254,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="SniffAndEnrich" type="b2602c69:ProjectViewProjectNode" />
               <item name="SniffAndEnrich" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SniffAndEnrich" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SniffAndEnrich" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SniffAndEnrich" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SniffAndEnrich" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SniffAndEnrich" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SniffAndEnrich" type="462c0819:PsiDirectoryNode" />
-              <item name="animation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SniffAndEnrich" type="b2602c69:ProjectViewProjectNode" />
@@ -335,7 +281,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,7 +293,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553953376846" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/input" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -355,22 +301,23 @@
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/input" />
-      <recent name="C:\Users\Aletta\IdeaProjects\DatabaseCleaner\" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/input" />
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\Aletta\IdeaProjects\DatabaseCleaner\parsermaven\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/input" />
+      <recent name="C:\Users\Aletta\IdeaProjects\DatabaseCleaner\" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -473,7 +420,10 @@
       <updated>1547536286910</updated>
       <workItem from="1561574935355" duration="1010000" />
       <workItem from="1561979954057" duration="3357000" />
-      <workItem from="1561984421562" duration="7756000" />
+      <workItem from="1561984421562" duration="11980000" />
+      <workItem from="1562023695350" duration="32000" />
+      <workItem from="1562024146324" duration="143000" />
+      <workItem from="1562088534667" duration="6467000" />
     </task>
     <task id="LOCAL-00001" summary="Splits activity based on time intervals">
       <created>1547545631667</created>
@@ -573,11 +523,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552354712773</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactored some functions, added heatmap utility for trilateration correction">
+      <created>1562022977313</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1562022977314</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12123000" />
+    <option name="totallyTimeSpent" value="22989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -589,10 +546,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="705" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="708" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.62" visible="true" weight="0.21243942" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.62" visible="true" weight="0.22778675" />
       <window_info id="Favorites" order="1" sideWeight="0.5023256" side_tool="true" weight="0.21028744" />
       <window_info id="Structure" order="2" sideWeight="0.38" side_tool="true" weight="0.21396054" />
       <window_info id="Image Layers" order="3" />
@@ -600,15 +557,15 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32626426" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.24469821" />
-      <window_info anchor="bottom" x="1388" y="352" width="1876" height="335" id="Debug" order="3" sideWeight="0.4989339" weight="0.39314845" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32524273" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.2353896" />
+      <window_info anchor="bottom" x="1388" y="352" width="1876" height="335" id="Debug" order="3" sideWeight="0.4989339" weight="0.29449838" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32789558" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31810766" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31758958" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" weight="0.3445287" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32300162" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32142857" />
       <window_info anchor="bottom" id="Dependency Viewer" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4989339" weight="0.32733223" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -657,7 +614,8 @@
     <MESSAGE value="Animation of moving mac coordinates added and multiple file processing included" />
     <MESSAGE value="trilat changed to levenberg marquard optimiser trilateration" />
     <MESSAGE value="BUG RESOLVED: time updated in history files properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="BUG RESOLVED: time updated in history files properly" />
+    <MESSAGE value="refactored some functions, added heatmap utility for trilateration correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored some functions, added heatmap utility for trilateration correction" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -665,12 +623,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/parser/CSVReader.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/animation/Animate.java</url>
           <line>34</line>
@@ -682,18 +634,6 @@
           <line>36</line>
           <properties />
           <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/parser/CSVReader.java</url>
-          <line>252</line>
-          <properties />
-          <option name="timeStamp" value="203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/animation/Animate.java</url>
@@ -709,27 +649,88 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
-          <line>81</line>
+          <line>78</line>
           <properties />
           <option name="timeStamp" value="225" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
-          <line>83</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
-          <line>85</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="227" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
+          <line>167</line>
+          <properties />
+          <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
+          <line>164</line>
+          <properties />
+          <option name="timeStamp" value="247" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
+          <line>161</line>
+          <properties />
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
+          <line>160</line>
+          <properties />
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
+          <line>189</line>
+          <properties />
+          <option name="timeStamp" value="250" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/parser/RequestResponseParser.java</url>
+          <line>163</line>
+          <properties />
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="HistoryHolder.getInstance().getHistory()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>HistoryHolder.getInstance().getHistory()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Double.parseDouble(&quot;-47&quot;.substring(0,3))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Double.parseDouble(&quot;-47&quot;.substring(0,2))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rssiHeatmap</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>sdf.parse(substring)</expression-string>
         <language-id>JAVA</language-id>
@@ -760,28 +761,6 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>locationByTrilaterationRes[0]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getLocationByTrilateration2(new ArrayList&lt;Trilat&gt;(listOfTrilatDistances.remove(2))</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>src.Trilat</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getLocationByTrilateration2(new ArrayList&lt;Trilat&gt;(new Trilat(last)))</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>src.Trilat</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getLocationByTrilateration2(trilat)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
@@ -792,39 +771,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/shape/Circle.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/lemmingapex/trilateration/trilateration/1.0.2/trilateration-1.0.2.jar!/com/lemmingapex/trilateration/NonLinearLeastSquaresSolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/lemmingapex/trilateration/trilateration/1.0.2/trilateration-1.0.2.jar!/com/lemmingapex/trilateration/TrilaterationFunction.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/beans/EventHandler.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Map.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Animation.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/com/sun/javafx/application/PlatformImpl.java" />
-    <entry file="file://$PROJECT_DIR$/test.csv" />
     <entry file="file://$PROJECT_DIR$/test_dist.csv">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-27">
@@ -856,23 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/HistoryHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/LocationHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/helper/Lookup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -880,14 +809,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendorMacs.numbers">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendorMacs.numbers" />
     <entry file="file://$PROJECT_DIR$/vendorMacs.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/ProbeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -903,30 +830,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/input/capture_febr_27_2.csv">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="83" lean-forward="true" selection-start-line="36" selection-start-column="83" selection-end-line="36" selection-end-column="83" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-348508">
-          <caret line="702" column="3" lean-forward="true" selection-start-line="702" selection-start-column="3" selection-end-line="702" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final_culomnization_history.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/input/febr26.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Probe.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -936,38 +844,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/final_culomnization_out.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="347">
           <caret line="540" column="47" selection-start-line="540" selection-start-column="47" selection-end-line="540" selection-end-column="47" />
         </state>
       </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/februar26HistoryStringTimestmp.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heatmap_1.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/febr26.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-7882" />
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/animation/Animate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="39" column="100" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/LatLng.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -976,64 +872,215 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Trilat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding>
+            <element signature="e#950#951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/HistoryStringTimestmp_febr28.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/febr28.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/capture_febr_14.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/capture_febr_25.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/febr26.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/capture_febr_27.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="83" lean-forward="true" selection-start-line="36" selection-start-column="83" selection-end-line="36" selection-end-column="83" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="391">
+          <caret line="711" column="18" selection-start-line="711" selection-start-column="18" selection-end-line="711" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/capture_febr_28.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/febr27.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="2220">
+          <caret line="148" column="25" selection-start-line="148" selection-start-column="25" selection-end-line="148" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/HistoryHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/capture_febr_26.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="96">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/capture_febr_26.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Capture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="93">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/HistoryStringTimestmp_febr27.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/history_febr_27.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/CSVReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="224" column="32" selection-start-line="224" selection-start-column="32" selection-end-line="224" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createActivities#0;class#CSVReader#0" />
+            <element signature="method#orderProcessedActivitiesByDate#0;class#CSVReader#0" />
+            <element signature="method#getLocationByMultipleTrilateration#0;class#CSVReader#0" />
+            <element signature="method#calibrateLatLngWithHeatmaps#0;class#CSVReader#0" />
+            <element signature="method#getLocationByTrilateration#0;class#CSVReader#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/LocationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="113" selection-start-line="5" selection-start-column="113" selection-end-line="5" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/history_febr_26.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="148" selection-start-line="2" selection-start-column="134" selection-end-line="2" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/HistoryStringTimestmp_febr26.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/RequestResponseParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="296" selection-start-line="296" selection-end-line="296" />
+        <state relative-caret-position="2833">
+          <caret line="262" column="48" selection-start-line="262" selection-start-column="48" selection-end-line="262" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#writeHistoryToFile#0;class#RequestResponseParser#0" />
+            <element signature="method#initHeatmap#0;class#RequestResponseParser#0" />
+            <element signature="method#initHistoryFile#0;class#RequestResponseParser#0" />
             <element signature="method#buildTime#0;class#RequestResponseParser#0" />
-            <element signature="method#createHistory#0;class#RequestResponseParser#0" />
             <element signature="method#getCurrentElementTime#0;class#RequestResponseParser#0" />
             <element signature="method#initOUI#0;class#RequestResponseParser#0" />
             <element signature="method#initFile#0;class#RequestResponseParser#0" />
             <element signature="method#matchLocationSSID#0;class#RequestResponseParser#0" />
             <element signature="method#matchMACtoVendor#0;class#RequestResponseParser#0" />
             <element signature="method#sortbykey#0;class#RequestResponseParser#0" />
-            <element signature="method#writeCSV#0;class#RequestResponseParser#0" />
             <element signature="method#createRecords#0;class#RequestResponseParser#0" />
             <element signature="method#calculateDistance#0;class#RequestResponseParser#0" />
-            <element signature="e#20216#20248#1" />
-            <element signature="e#21704#21705#0" expanded="true" />
-            <element signature="e#20305#20336#1" />
-            <element signature="e#21792#21793#0" expanded="true" />
+            <element signature="e#21804#21805#0" expanded="true" />
+            <element signature="e#21835#21836#0" expanded="true" />
+            <element signature="e#21903#21904#0" expanded="true" />
+            <element signature="e#21937#21938#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/CSVReader.java">
+    <entry file="file://$PROJECT_DIR$/src/animation/Animate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="268" selection-start-line="268" selection-end-line="268" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getLocationByTrilateration#0;class#CSVReader#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Trilat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="205">
+          <caret line="117" column="130" selection-start-line="117" selection-start-column="130" selection-end-line="117" selection-end-column="130" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/heatmap_1.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
   </component>

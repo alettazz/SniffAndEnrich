@@ -50,8 +50,6 @@ public class CSVReader {
         orderProcessedActivitiesByDate();
 
         createActivities(5);
-
-        System.out.println(calculateDistance(-60, 2.5));
     }
 
     private static void createActivities(int calibratedTime) {
@@ -120,8 +118,7 @@ public class CSVReader {
                             thirdDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
                                     .parse(activity.getProbes().get(i + 1).getDate());
                         }
-                        calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi()), 2.5);
-                        // System.out.println((activity.getProbes().get(i).getMac_address()+"=>"+firstDate + " , " + secondDate+ " , "+thirdDate));
+                        calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi()));
                         sb.append("\n");
                         sb.append(id++);
                         sb.append(",");
@@ -151,11 +148,11 @@ public class CSVReader {
                             sb.append(",");
                             sb.append(activity.getProbes().get(i + 1).getRssi());
                             sb.append(",");
-                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i - 1).getRssi()), 2.4));
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i - 1).getRssi())));
                             sb.append(",");
-                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi()), 2.4));
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi())));
                             sb.append(",");
-                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i + 1).getRssi()), 2.4));
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i + 1).getRssi())));
                             sb.append(",");
 
                         } else {
@@ -164,9 +161,9 @@ public class CSVReader {
                             sb.append(",");
                             sb.append(" null ");
                             sb.append(",");
-                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i - 1).getRssi()), 2.4));
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i - 1).getRssi())));
                             sb.append(",");
-                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi()), 2.4));
+                            sb.append(calculateDistance(Double.parseDouble(activity.getProbes().get(i).getRssi())));
                             sb.append(",");
                             sb.append(" 0 ");
                             sb.append(",");
@@ -220,19 +217,17 @@ public class CSVReader {
         }
     }
 
-    public static double calculateDistance(double levelInDb, double freqInMHz) {
+    public static double calculateDistance(double levelInDb) {
         double exp = (-69.44 - (levelInDb)) / 20.0;
         return Math.pow(10.0, exp);
     }
 
     public static double[] getLocationByMultipleTrilateration(List<Trilat> listOfTrilatDistances) {
 
-
+        //adding values from heatmap for a better trilateration
         calibrateLatLngWithHeatmaps(listOfTrilatDistances);
 
-
         //lemmingapex trilateration for the corrected values
-
         double[][] positions = new double[listOfTrilatDistances.size()][2];
         double[] distances = new double[listOfTrilatDistances.size()];
 
@@ -246,9 +241,7 @@ public class CSVReader {
 
 
         double[] centroid = optimum.getPoint().toArray();
-        if (listOfTrilatDistances.size() == 2) {
-            //  centroid = checkIfInBuildingsRange(centroid);
-        }
+
         return centroid;
     }
 
@@ -264,14 +257,8 @@ public class CSVReader {
 
     }
 
-    private static double[] checkIfInBuildingsRange(double[] centroid) {
-        return new double[0];
-    }
-
     public static LatLng getLocationByTrilateration(ArrayList<Trilat> trilat) {
 
-
-        //getLocationByMultipleTrilateration(trilat);
         double[] P1 = new double[2];
         double[] P2 = new double[2];
         double[] P3 = new double[2];
@@ -378,7 +365,6 @@ public class CSVReader {
         if (!Double.isNaN(triptx) && !Double.isNaN(tripty)) {
             return new LatLng(triptx, tripty);
         } else {
-            System.out.println("vigyazz latlng 0 " + triptx + " " + tripty);
             return new LatLng(0, 0);
         }
 
